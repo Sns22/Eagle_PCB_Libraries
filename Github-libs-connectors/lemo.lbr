@@ -1,0 +1,508 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Eagle-Libraries/lemo.lbr at master · zumbik/Eagle-Libraries · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png" />
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="fe1.rs.github.com">
+    <link rel="assets" href="https://a248.e.akamai.net/assets.github.com/">
+    <link rel="xhr-socket" href="/_sockets" />
+    
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="selected-link" value="repo_source" data-pjax-transient />
+    <meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" />
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="1aPouCNwatfddMvE3kwCSSzchiECGjCXLxCJBCSu8Rw=" name="csrf-token" />
+
+    <link href="https://a248.e.akamai.net/assets.github.com/assets/github-3cd5474511c95dff221d37e940ad18715f0749d1.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://a248.e.akamai.net/assets.github.com/assets/github2-c8fae3a887e5e0e51b7fe06f228ba7b53cc45e53.css" media="all" rel="stylesheet" type="text/css" />
+    
+
+
+      <script src="https://a248.e.akamai.net/assets.github.com/assets/frameworks-1f72571b966545f4e27481a3b0ebbeeed4f2f139.js" type="text/javascript"></script>
+      <script src="https://a248.e.akamai.net/assets.github.com/assets/github-cf0d33eb63c4372bca4ee883f44784474d8a96f3.js" type="text/javascript"></script>
+      
+      <meta http-equiv="x-pjax-version" content="f2531c07887f05529a061c85c74a8194">
+
+        <link data-pjax-transient rel='permalink' href='/zumbik/Eagle-Libraries/blob/1d04cf2f500da7ac68657247b2d988859a348ab2/lemo.lbr'>
+  <meta property="og:title" content="Eagle-Libraries"/>
+  <meta property="og:type" content="githubog:gitrepository"/>
+  <meta property="og:url" content="https://github.com/zumbik/Eagle-Libraries"/>
+  <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/gravatars/gravatar-user-420.png"/>
+  <meta property="og:site_name" content="GitHub"/>
+  <meta property="og:description" content="Contribute to Eagle-Libraries development by creating an account on GitHub."/>
+
+  <meta name="description" content="Contribute to Eagle-Libraries development by creating an account on GitHub." />
+
+  <meta content="1806594" name="octolytics-dimension-user_id" /><meta content="zumbik" name="octolytics-dimension-user_login" /><meta content="4525094" name="octolytics-dimension-repository_id" /><meta content="zumbik/Eagle-Libraries" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="4525094" name="octolytics-dimension-repository_network_root_id" /><meta content="zumbik/Eagle-Libraries" name="octolytics-dimension-repository_network_root_nwo" />
+  <link href="https://github.com/zumbik/Eagle-Libraries/commits/master.atom" rel="alternate" title="Recent Commits to Eagle-Libraries:master" type="application/atom+xml" />
+
+  </head>
+
+
+  <body class="logged_out page-blob windows vis-public env-production ">
+
+    <div class="wrapper">
+      
+      
+      
+
+      
+      <div class="header header-logged-out">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions">
+      <a class="button primary" href="/signup">Sign up</a>
+      <a class="button" href="/login?return_to=%2Fzumbik%2FEagle-Libraries%2Fblob%2Fmaster%2Flemo.lbr">Sign in</a>
+    </div>
+
+    <div class="command-bar js-command-bar  in-repository">
+
+
+      <ul class="top-nav">
+          <li class="explore"><a href="/explore">Explore</a></li>
+        <li class="features"><a href="/features">Features</a></li>
+          <li class="enterprise"><a href="https://enterprise.github.com/">Enterprise</a></li>
+          <li class="blog"><a href="/blog">Blog</a></li>
+      </ul>
+        <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off"
+    
+    
+      data-repo="zumbik/Eagle-Libraries"
+      data-branch="master"
+      data-sha="191a4df45c78b62df676263cf397cdd366a5186d"
+  >
+
+    <input type="hidden" name="nwo" value="zumbik/Eagle-Libraries" />
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" class="js-search-this-repository" name="search_target" value="repository" checked="checked" />
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input type="radio" name="search_target" value="global" />
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span class="octicon help tooltipped downwards" title="Show command bar help">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input type="hidden" name="ref" value="cmdform">
+
+</form>
+    </div>
+
+  </div>
+</div>
+
+
+      
+
+
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+
+    <li>
+      <a href="/login?return_to=%2Fzumbik%2FEagle-Libraries"
+        class="minibutton with-count js-toggler-target star-button entice tooltipped upwards"
+        title="You must be signed in to use this feature" rel="nofollow">
+        <span class="octicon octicon-star"></span>Star
+      </a>
+      <a class="social-count js-social-count" href="/zumbik/Eagle-Libraries/stargazers">
+        3
+      </a>
+    </li>
+    <li>
+      <a href="/login?return_to=%2Fzumbik%2FEagle-Libraries"
+        class="minibutton with-count js-toggler-target fork-button entice tooltipped upwards"
+        title="You must be signed in to fork a repository" rel="nofollow">
+        <span class="octicon octicon-git-branch"></span>Fork
+      </a>
+      <a href="/zumbik/Eagle-Libraries/network" class="social-count">
+        1
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="/zumbik" class="url fn" itemprop="url" rel="author"><span itemprop="title">zumbik</span></a></span
+          ><span class="repohead-name-divider">/</span><strong
+          ><a href="/zumbik/Eagle-Libraries" class="js-current-repository js-repo-home-link">Eagle-Libraries</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+
+      <div class="repository-with-sidebar repo-container
+            ">
+
+          <div class="repository-sidebar">
+
+              
+
+<div class="repo-nav repo-nav-full js-repository-container-pjax js-octicon-loaders">
+  <div class="repo-nav-contents">
+    <ul class="repo-menu">
+      <li class="tooltipped leftwards" title="Code">
+        <a href="/zumbik/Eagle-Libraries" class="js-selected-navigation-item selected" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /zumbik/Eagle-Libraries">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+        <li class="tooltipped leftwards" title="Issues">
+          <a href="/zumbik/Eagle-Libraries/issues" class="js-selected-navigation-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /zumbik/Eagle-Libraries/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class='counter'>0</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>        </li>
+
+      <li class="tooltipped leftwards" title="Pull Requests"><a href="/zumbik/Eagle-Libraries/pulls" class="js-selected-navigation-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /zumbik/Eagle-Libraries/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class='counter'>0</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+
+
+
+    </ul>
+    <div class="repo-menu-separator"></div>
+    <ul class="repo-menu">
+
+      <li class="tooltipped leftwards" title="Pulse">
+        <a href="/zumbik/Eagle-Libraries/pulse" class="js-selected-navigation-item " data-pjax="true" data-selected-links="pulse /zumbik/Eagle-Libraries/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped leftwards" title="Graphs">
+        <a href="/zumbik/Eagle-Libraries/graphs" class="js-selected-navigation-item " data-pjax="true" data-selected-links="repo_graphs repo_contributors /zumbik/Eagle-Libraries/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+      <li class="tooltipped leftwards" title="Network">
+        <a href="/zumbik/Eagle-Libraries/network" class="js-selected-navigation-item js-disable-pjax" data-selected-links="repo_network /zumbik/Eagle-Libraries/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+</a>      </li>
+
+    </ul>
+
+  </div>
+</div>
+
+
+              <div class="only-with-full-nav">
+
+                
+
+  
+
+<div class="clone-url open"
+  data-protocol-type="http"
+  data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+
+  <input type="text" class="clone js-url-field"
+         value="https://github.com/zumbik/Eagle-Libraries.git" readonly="readonly">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/zumbik/Eagle-Libraries.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url "
+  data-protocol-type="subversion"
+  data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+
+  <input type="text" class="clone js-url-field"
+         value="https://github.com/zumbik/Eagle-Libraries" readonly="readonly">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/zumbik/Eagle-Libraries" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+    <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+    <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>,
+  and <a href="https://help.github.com/articles/which-remote-url-should-i-use">other methods.</a>
+</p>
+
+
+  <a href="http://windows.github.com" class="minibutton sidebar-button">
+    <span class="octicon octicon-device-desktop"></span>
+    Clone in Desktop
+  </a>
+
+
+                  <a href="/zumbik/Eagle-Libraries/archive/master.zip"
+                     class="minibutton sidebar-button"
+                     title="Download this repository as a zip file"
+                     rel="nofollow">
+                    <span class="octicon octicon-cloud-download"></span>
+                    Download ZIP
+                  </a>
+
+              </div>
+          </div>
+
+          <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+            
+
+
+<!-- blob contrib key: blob_contributors:v21:7488fff8a8baf01dbbec6b29c6d067ec -->
+<!-- blob contrib frag key: views10/v8/blob_contributors:v21:7488fff8a8baf01dbbec6b29c6d067ec -->
+
+<p title="This is a placeholder element" class="js-history-link-replace hidden"></p>
+
+<a href="/zumbik/Eagle-Libraries/find/master" data-pjax data-hotkey="t" style="display:none">Show File Finder</a>
+
+<div class="file-navigation">
+  
+
+
+<div class="select-menu js-menu-container js-select-menu" >
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w"
+    data-master-branch="master"
+    data-ref="master">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="/zumbik/Eagle-Libraries/blob/master/lemo.lbr" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" rel="nofollow" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+  <div class="breadcrumb">
+    <span class='repo-root js-repo-root'><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/zumbik/Eagle-Libraries" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">Eagle-Libraries</span></a></span></span><span class="separator"> / </span><strong class="final-path">lemo.lbr</strong> <span class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="lemo.lbr" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+  <div class="commit commit-loader file-history-tease js-deferred-content" data-url="/zumbik/Eagle-Libraries/contributors/master/lemo.lbr">
+    Fetching contributors…
+
+    <div class="participation">
+      <p class="loader-loading"><img alt="Octocat-spinner-32-eaf2f5" height="16" src="https://a248.e.akamai.net/assets.github.com/images/spinners/octocat-spinner-32-EAF2F5.gif" width="16" /></p>
+      <p class="loader-error">Cannot retrieve contributors at this time</p>
+    </div>
+  </div>
+
+<div id="files" class="bubble">
+  <div class="file">
+    <div class="meta">
+      <div class="info">
+        <span class="icon"><b class="octicon octicon-file-text"></b></span>
+        <span class="mode" title="File Mode">file</span>
+        <span>30.377 kb</span>
+      </div>
+      <div class="actions">
+        <div class="button-group">
+          <a href="/zumbik/Eagle-Libraries/raw/master/lemo.lbr" class="button minibutton " id="raw-url">Raw</a>
+          <a href="/zumbik/Eagle-Libraries/commits/master/lemo.lbr" class="button minibutton " rel="nofollow">History</a>
+        </div><!-- /.button-group -->
+            <a class="minibutton danger empty-icon js-entice" href=""
+               data-entice="You must be signed in and on a branch to make or propose changes">
+            Delete
+          </a>
+      </div><!-- /.actions -->
+
+    </div>
+        <div class="blob-wrapper data type-text js-blob-data">
+      <div class="image js-image">
+          <a href="/zumbik/Eagle-Libraries/blob/master/lemo.lbr?raw=true">View Raw</a>
+      </div>
+    <!-- CSVs/TSVs can get pretty big, and they're not being shown if they fail blob.large? -->
+  </div>
+
+  </div>
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" class="js-jump-to-line" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" class="js-jump-to-line-form">
+    <input class="linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;">
+    <button type="submit" class="button">Go</button>
+  </form>
+</div>
+          </div>
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div>
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com">Developer</a></li>
+      <li><a href="http://training.github.com">Training</a></li>
+      <li><a href="http://shop.github.com">Shop</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+
+    </ul>
+
+    <a href="/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>&copy; 2013 <span title="0.11796s from fe1.rs.github.com">GitHub</span>, Inc.</li>
+        <li><a href="/site/terms">Terms</a></li>
+        <li><a href="/site/privacy">Privacy</a></li>
+        <li><a href="/security">Security</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester"
+                 data-url="/zumbik/Eagle-Libraries/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards" title="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped leftwards"
+      title="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+    
+  </body>
+</html>
+

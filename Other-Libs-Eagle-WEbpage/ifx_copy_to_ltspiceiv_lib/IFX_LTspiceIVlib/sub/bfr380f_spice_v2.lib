@@ -1,0 +1,89 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFR380F	<<<								
+*	(C)	2010	Infineon	Technologies	AG							
+*	Version 2.0	August	2010								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 145 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note 'Thermal Resistance Calculation' AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************						
+*BFR380F C B E 
+.SUBCKT BFR380F 1 2 3
+
+CBEPAR 22 33 1.287E-014
+CBCPAR 22 11 3.804E-013
+CCEPAR 11 33 1.695E-013
+LB    22 20 2.257E-010
+LE   33 30 3.572E-010
+CBEPCK 24 34  5.689E-015
+CCEPCK 10 34  5.854E-014
+CBCPCK 24 10  1.589E-015
+LBX    24 2 1.469E-010
+LEX   34 3 6.231E-011
+LCX   10 1  2.247E-010
+Rcx 11 10 0.882
+Rbx 20 24 0.139
+Rex 30 34 0.02676
+
+Q1 11 22 33 M_BFR380F
+
+.MODEL 	M_BFR380F  	NPN(										
++	IS	=	2.254E-016									
++	BF	=	182.7									
++	NF	=	0.9937									
++	VAF	=	55.15									
++	IKF	=	0.4285									
++	ISE	=	1.222E-014									
++	NE	=	2									
++	BR	=	17.16		
++	NR	=	0.9923		
++	VAR	=	2.971	
++	IKR	=	0.005662		
++	ISC	=	6.038E-015		
++	NC	=	1.5		
++	RB	=	2.564		
++	IRB	=	0		
++	RBM	=	0.01719	
++	RE	=	0.1976		
++	RC	=	1.932	
++	XTB	=	0.2643		
++	EG	=	1.11		
++	XTI	=	4.663		
++	CJE	=	1.313E-012		
++	VJE	=	1		
++	MJE	=	0.34		
++	TF	=	7.477E-012		
++	XTF	=	17.27		
++	VTF	=	1.329		
++	ITF	=	0.61		
++	PTF	=	4.667		
++	CJC	=	2.876E-013		
++	VJC	=	0.5861		
++	MJC	=	0.4332		
++	XCJC	=	1		
++	TR	=	1.793E-009
++	CJS	=	0		
++	MJS	=	1
++   VJS =   1 		
++   FC  =   0.7064		
++	KF	=	2.229E-013		
++	AF	=	1.64)			
+***************************************************************					
+				
+.ENDS BFR380F

@@ -1,0 +1,143 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFP720ESD	<<<								
+*	(C)	2010	Infineon	Technologies	AG							
+*	Version 2.0	June	2010								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 415 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************		
+*BFP720ESD C B E1 E2 
+.SUBCKT BFP720ESD 1 2 3 4
+
+CBEPAR 22 33 1.048E-013
+CBCPAR 22 11 2.58E-014
+CCEPAR 11 33 2.737E-013
+LB    22 20 6.327E-010
+LE   33 30 1.864E-010
+LC   11 10  5.957E-010
+CBEPCK 20 30  9.242E-014
+CBCPCK 20 10  1.779E-015
+CCEPCK 10 30  8.276E-014
+LBX    20 2 3.338E-010
+LEX   30 35 9.323E-011
+LCX   10 1  2.42E-010
+
+R_Tr 55 5 683.3
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+D1 33 25 M_D1  
+D2 5 25  M_D2
+
+RBLfdb 22 25 1.828
+RPS 33 5 0.1123
+RSUB 30 5 0.05469
+
+D3 5 15 M_D3
+D4 23 33 M_D4
+D5 23 15 M_D5
+
+RLDNBL 15 11 6.471
+
+
+Q1 11 22 33 55 M_BFP720ESD
+
+
+.MODEL M_D1 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=6.1
++ CJO=1.968E-014)
+
+
+.MODEL M_D2 D(
++ IS=800E-018	
++ N=1.02
++ RS=4170
++ CJO=4.284E-015)
+
+
+.MODEL M_D3 D(
++ IS=800E-018	
++ N=1.02
++ RS=1380
++ CJO =9.378E-014)
+
+
+.MODEL M_D4 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=0.2
++ CJO =3.128E-014)
+
+.MODEL M_D5 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=4.7
++ CJO =5.321E-014)
+
+
+
+
+.MODEL 	M_BFP720ESD	NPN(										
++	IS	=	7.612E-016									
++	BF	=	518.4									
++	NF	=	1.026									
++	VAF	=	157.5									
++	IKF	=	0.05529									
++	ISE	=	5.344E-015									
++	NE	=	1.829									
++	BR	=	264.6		
++	NR	=	0.9669		
++	VAR	=	2.278	
++	IKR	=	0.002409		
++	ISC	=	4.758E-015		
++	NC	=	1.568		
++	RB	=	8.442		
++	IRB	=	0		
++	RBM	=	0.1186	
++	RE	=	0.05132		
++	RC	=	2.182	
++	XTB	=	-2.1		
++	EG	=	1.11		
++	XTI	=	0.1		
++	CJE	=	5.895E-014		
++	VJE	=	1		
++	MJE	=	0.9539		
++	TF	=	2.521E-012		
++	XTF	=	17.49		
++	VTF	=	0.5295		
++	ITF	=	0.5638		
++	PTF	=	4.667		
++	CJC	=	8.027E-014		
++	VJC	=	0.4174		
++	MJC	=	0.3969		
++	XCJC =	0.4894		
++	TR	=	1.793E-009
++	CJS	=	5.433E-014		
++	MJS	=	0.6481
++   VJS	=  	0.6332 		
++	FC	=	0.7712		
++	KF	=	7.9E-012		
++	AF	=	1.5)
+***************************************************************					
+					
+
+.ENDS BFP720ESD

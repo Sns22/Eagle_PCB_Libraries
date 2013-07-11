@@ -1,0 +1,146 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFP640ESD	<<<								
+*	(C)	2010	Infineon	Technologies	AG							
+*	Version 2.0	June	2010								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 310 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************		
+*BFP640ESD C B E1 E2 
+.SUBCKT BFP640ESD 1 2 3 4
+
+CBEPAR 22 33 4.179E-014
+CBCPAR 22 11 7.095E-014
+CCEPAR 11 33 2.024E-013
+LB    22 20 7.956E-010
+LE   33 30 3.469E-011
+LC   11 10  6.095E-010
+CBEPCK 20 30  5.083E-014
+CBCPCK 20 10  6E-015
+CCEPCK 10 30  4.115E-014
+LBX    20 2 2.657E-010
+LEX   30 35 1.624E-010
+LCX   10 1  1.771E-010
+
+D1 33 25 M_D1  
+D2 41 25  M_D2
+
+RBLfdb 22 25 1.754
+
+R_PW_fbd 41 33 7.5
+R_PW_e11g 42 33 2.1
+R_sub_fbd 41 5 477
+R_sub_e11g 42 5 191.7
+R_CS_npn 55 5 160
+RSUB 30 5 1E-006
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+D3 42 15 M_D3
+D4 23 33 M_D4
+D5 23 15 M_D5
+
+RLDNBL 15 11 10.63
+
+
+Q1 11 22 33 55 M_BFP640ESD
+
+
+.MODEL M_D1 D(
++ IS=2.5E-017	
++ N=1.02
++ RS=6.1
++ CJO=1E-014)
+
+
+.MODEL M_D2 D(
++ IS=2E-018	
++ N=1.02
++ RS=0.01
++ CJO=9E-015)
+
+
+.MODEL M_D3 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=0.01
++ CJO =2E-014)
+
+
+.MODEL M_D4 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=0.2
++ CJO =2E-014)
+
+.MODEL M_D5 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=4.7
++ CJO =3.003E-014)
+
+
+
+
+.MODEL 	M_BFP640ESD	NPN(										
++	IS	=	7E-016									
++	BF	=	557.2									
++	NF	=	0.988									
++	VAF	=	192.2									
++	IKF	=	0.09128									
++	ISE	=	3.649E-014									
++	NE	=	2									
++	BR	=	246.5		
++	NR	=	0.9955		
++	VAR	=	1.577	
++	IKR	=	0.004397		
++	ISC	=	1.27E-014		
++	NC	=	1.322		
++	RB	=	4.406		
++	IRB	=	0.0006534		
++	RBM	=	0.8094	
++	RE	=	0.1665		
++	RC	=	4.042	
++	XTB	=	-2.03		
++	EG	=	1.12		
++	XTI	=	0.15		
++	CJE	=	3.798E-013		
++	VJE	=	1		
++	MJE	=	0.1016		
++	TF	=	2.502E-012		
++	XTF	=	2.09		
++	VTF	=	0.09118		
++	ITF	=	0.1636		
++	PTF	=	4.652		
++	CJC	=	4.293E-014		
++	VJC	=	0.1152		
++	MJC	=	0.1329		
++	XCJC	=	1		
++	TR	=	1.792E-009
++	CJS	=	1.541E-013		
++	MJS	=	0.1235
++   VJS =   0.8804		
++	FC	=	0.8		
++	KF	=	7.116E-011		
++	AF	=	1.7)
+***************************************************************					
+					
+
+.ENDS BFP640ESD

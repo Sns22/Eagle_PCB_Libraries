@@ -1,0 +1,2416 @@
+/*
+Theme Name: CadSoft
+Theme URI: http://cadsoft.de
+*/
+
+@import "http://www.cadsoft.de/wp-content/themes/cadsoft/css/typography.css";
+@import "http://www.cadsoft.de/wp-content/themes/cadsoft/css/layout.css";
+@import "http://www.cadsoft.de/wp-content/themes/cadsoft/css/nivo-slider.css";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+blockquote, q {
+    quotes: none;
+}
+:focus {
+    outline: 0;
+}
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body {
+    font: 12px/18px Arial, Tahoma, Verdana, sans-serif;
+    width: 100%;
+}
+a {
+    color: blue;
+    outline: none;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    margin-bottom: 18px;
+}
+img {
+    border: none;
+}
+input {
+    vertical-align: middle;
+}
+#content h2, #content h3 {
+    font-size: 18px;
+    font-weight: normal;
+	margin-bottom: 18px;
+}
+.clear { clear: both; }
+
+
+/* Header
+-----------------------------------------------------------------------------*/
+#header {
+    height: 109px;
+    background: url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/header-bg.png) repeat-x center;
+}
+#header .inner-container {
+    margin: 0 auto;
+    position: relative;
+    width: 915px;
+}
+
+#logo {
+    float: left;
+    position: relative;
+    top: 20px;
+}
+#header .menu-top-menu-container {
+    left: 90px;
+    min-width: 852px;
+    position: absolute;
+    z-index: 10;
+}
+#menu-top-menu, .menu, #menu-top-menu li ul, #qtranslate ul {
+    list-style-type: none !important;
+}
+#menu-top-menu > li {
+    float: left;
+    border-left: 1px solid #3a0505;
+    line-height: 109px;	
+}
+.ie7 #menu-top-menu > li > a {
+    
+}
+#menu-top-menu > li > a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 10px;
+    position: relative;
+    text-decoration: none;
+    z-index: 2;
+}
+
+#menu-top-menu > li ul {
+    background: none repeat scroll 0 0 #AA0F0F;
+    border: 1px solid #72131C;
+    border-top: none;
+    padding: 15px 0;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+}
+#menu-top-menu > li ul li {
+    line-height: 16px;
+    position: relative;
+    z-index: 99;
+}
+#menu-top-menu > li ul li a {
+    color: #FFFFFF;
+    display: block;
+    padding: 7px 11px 0;
+    text-decoration: none;
+}
+#menu-top-menu > li ul li a:hover {
+    text-decoration: underline;
+}
+#menu-top-menu > li.current-menu-item > a,
+#menu-top-menu > li.current_page_item > a,
+#menu-top-menu > li.current-page-ancestor > a,
+#menu-top-menu > li.current_page_parent > a,
+#menu-top-menu > li.current-post-ancestor > a,
+#menu-top-menu > li.hover > a,
+#menu-top-menu > li.current-menu-ancestor,
+#menu-top-menu > li.current-menu-parent {
+    background: url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/menu-bg.png) repeat-x;
+    height: 109px;
+}
+
+#header .menu li img {
+    display: block;
+    height: 109px;
+    margin: -109px 0 0;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+/* Tour
+-----------------------------------------------------------------------------*/
+#tour {
+    background: url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/tour-bg-2.png) no-repeat center #000;
+    height: 408px;
+}
+#tour .inner-container {
+    width: 915px;
+    margin: 0 auto;
+}
+#tour .inner-container .left {
+    float: left;
+    height: 408px;
+    width: 370px;
+}
+#tour .inner-container h1 {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 34px;
+    margin: 60px 0 19px;
+}
+
+#tour .inner-container h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 26px;
+    margin: 60px 0 19px;
+}
+
+#tour .inner-container p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+#tour .inner-container a {
+    color: white;
+    text-decoration: underline;
+}
+#tour .inner-container a:hover {
+    text-decoration: none;
+}
+#tour .inner-container a.button {
+    text-decoration: none;
+}
+#tour .video {
+    float: right;
+    height: 329px;
+    overflow: hidden;
+    position: relative;
+    top: 40px;
+    width: 531px;
+    z-index: 1;
+}
+#tour .video object {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* Highlights
+-----------------------------------------------------------------------------*/
+#highlights {
+    height: 370px;
+    background: url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/highlights-bg.png) repeat-x;
+}
+#highlights .inner-container {
+    margin: 0 auto;
+    padding: 40px 0 31px;
+    width: 915px;
+}
+#highlights li {
+    border-right: 1px solid #B8B8B8;
+    float: left;
+    height: 310px;
+    overflow: hidden;
+    padding: 0 21px;
+    width: 196px;
+}
+#highlights li.first {
+    padding-left: 0;
+}
+#highlights li.last {
+    padding-right: 0;
+    border: none;
+}
+#highlights div.image {
+    border-bottom: 1px solid #B8B8B8;
+    height: 80px;
+    text-align: center;
+}
+#highlights li > div {
+    color: #474747;
+    font-family: georgia;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 25px auto 0;
+}
+#highlights h2 {
+    
+}
+#highlights a {
+    color: #474747;
+}
+#highlights a:hover {
+    
+}
+
+/* About
+-----------------------------------------------------------------------------*/
+#about {
+    height: 207px;
+    margin: 0;
+    border-bottom: 1px solid #adadad;
+}
+#about .inner-container {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/about-bg.jpg") no-repeat scroll 0 0 transparent;
+    height: 207px;
+    margin: 0 auto;
+    width: 915px;
+}
+#about p.p1 {
+    clear: both;
+    color: #FFFFFF;
+    float: right;
+    font-size: 21px;
+    height: 24px;
+    line-height: 24px;
+    margin: 27px 40px 0 0;
+    overflow: hidden;
+    width: 582px;
+}
+#about p.p2 {
+    clear: both;
+    color: #E50000;
+    float: right;
+    font-size: 29px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 40px 0 0;
+    overflow: hidden;
+    width: 582px;
+}
+#about p.p3 {
+    clear: both;
+    color: #FFFFFF;
+    float: right;
+    font-size: 14px;
+    height: 81px;
+    line-height: 20px;
+    margin: 4px 40px 0 0;
+    overflow: hidden;
+    width: 582px;
+    display: none;
+}
+#about p.p4 {
+    clear: both;
+    color: #FFFFFF;
+    float: right;
+    font-size: 14px;
+    font-style: italic;
+    height: 44px;
+    line-height: 44px;
+    margin: 73px 40px 0 0;
+    overflow: hidden;
+    width: 582px;
+}
+#about p.p4 span {
+    float: right;
+    width: 582px;
+}
+.ie7 #about p.p4 a {
+    position: relative;
+    bottom: 16px;
+}
+#about .explore {
+    float: left;
+    margin: 20px 0 0;
+    padding: 0 50px;
+}
+
+
+/* Articles
+-----------------------------------------------------------------------------*/
+#articles {
+    background: #f2f2f2;
+}
+#articles .inner-container {
+    height: 350px;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    width: 915px;
+}
+#articles .inner-container > div {
+    float: left;
+    width: 284px;
+}
+#webinars-and-events.home {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/news-bg.png") no-repeat scroll 0 13px transparent;
+    padding: 52px 15px 0 0;
+}
+#webinars-and-events.home li {
+    border-top: 1px solid #B8B8B8;
+    padding: 10px 2px 9px 0;
+}
+#webinars-and-events.home li a {
+    color: #474747;
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    text-decoration: none;
+}
+#webinars-and-events.home li a:hover {
+    color: #ab0000;
+}
+#webinars-and-events.home h2 {
+    color: #E50000;
+    font-size: 15px;
+    line-height: 26px;
+    margin: -36px 0 15px 39px;
+    text-decoration: none;
+    width: 260px;
+}
+#webinars-and-events.home h2 a { color: #474747; text-decoration: none; }
+#webinars-and-events.home h2 a:hover { color: #ab0000; }
+
+
+#news.home {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/news-bg.png") no-repeat scroll 15px 13px transparent;
+    border-left: 1px solid #B8B8B8;
+    border-right: 1px solid #B8B8B8;
+    padding: 52px 15px 0;
+}
+#news.home li {
+    border-top: 1px solid #B8B8B8;
+    padding: 10px 2px 9px 0;
+}
+#news.home li a {
+    color: #474747;
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    text-decoration: none;
+}
+#news.home li a:hover {
+    color: #ab0000;
+}
+#news.home h2 {
+    color: #E50000;
+    font-size: 15px;
+    line-height: 26px;
+    margin: -36px 0 15px 39px;
+    text-decoration: none;
+    width: 260px;
+}
+#news.home h2 a { color: #474747; text-decoration: none; }
+#news.home h2 a:hover { color: #ab0000; }
+
+
+#ulp.home {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/news-bg.png") no-repeat scroll 15px 13px transparent;
+    border-right: 1px solid #B8B8B8;
+    padding: 52px 15px 0;
+}
+#ulp.home a {
+    color: #474747;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+}
+#ulp.home a:hover {
+    color: #ab0000;
+}
+#ulp.home h2 {
+    color: #E50000;
+    font-size: 15px;
+    line-height: 26px;
+    margin: -36px 0 15px 39px;
+    text-decoration: none;
+    width: 260px;
+}
+
+#partners-and-projects.home {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/news-bg.png") no-repeat scroll 15px 13px transparent;
+    padding: 52px 0 0 15px;
+}
+#partners-and-projects.home a {
+    color: #474747;
+    font-size: 15px;
+    line-height: 20px;
+    text-decoration: underline;
+}
+#partners-and-projects.home a:hover {
+    color: #ab0000;
+}
+#partners-and-projects.home h2 {
+    color: #E50000;
+    font-size: 15px;
+    line-height: 26px;
+    margin: -36px 0 15px 39px;
+    text-decoration: none;
+    width: 260px;
+}
+#partners-and-projects.home h2 a {
+    text-decoration: none;
+}
+#partners-and-projects.home h2.second {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/news-bg.png") no-repeat scroll 0 0 transparent;
+    height: 30px;
+    margin: 0 0 15px;
+    padding: 0 0 0 39px;
+}
+
+	
+#partners-and-projects.home ul li { margin-bottom: 8px; }
+
+#partners-and-projects.home ul li a {
+	font-size: 12px; line-height: 14px;
+}
+
+#partners-and-projects.home p { color: #474747; }
+
+
+
+/* Bottom menu
+-----------------------------------------------------------------------------*/
+#bottom-menu {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/bottom-menu-bg.png") repeat-x scroll 0 0 transparent;
+    clear: both;
+}
+#bottom-menu .inner-container {
+    height: 257px;
+    margin: 0 auto;
+    width: 915px;
+}
+#bottom-menu .inner-container > ul > li {
+    float: left;
+    margin-right: 31px;
+    padding: 35px 0 0;
+    width: 197px;	
+}
+#bottom-menu .inner-container ul {
+	list-style-type: none;
+}
+#bottom-menu.brwsr-firefox-36 .inner-container ul li { float: left; margin-right: 30px; padding: 35px 0 0; width: 197px !important; }
+#bottom-menu.brwsr-firefox-36 .inner-container ul li ul li { float: left; margin-right: 0; padding: 5px 0 9px; width: 197px !important; }
+#bottom-menu.brwsr-firefox-36 .inner-container ul li.first { width: 915px !important; padding: 0 0 9px 0; }
+#bottom-menu.brwsr-firefox-36 .inner-container ul li ul li.first { width: 197px !important; }
+
+#bottom-menu .inner-container > ul > li.last {
+    margin: 0;
+}
+#bottom-menu.brwsr-firefox-36 .inner-container ul li.last { margin: 0; }
+
+#bottom-menu .textwidget li {
+    border-top: 1px solid #979797;
+    padding: 5px 0 9px;
+	list-style-type: none;
+}
+#bottom-menu .textwidget li.first {
+	padding: 5px 0 6px;
+}
+#bottom-menu .textwidget li.last {
+    
+}
+#bottom-menu .widget-container h3 {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 7px;
+}
+#bottom-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+#bottom-menu a:hover {
+    text-decoration: underline;
+}
+
+
+/* Middle
+-----------------------------------------------------------------------------*/
+#wrapper {
+    width: 915px;
+    margin: 0 auto;
+}
+#main {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/main-bg.jpg") no-repeat scroll center top #FFFFFF;
+    min-height: 450px;
+}
+#content {
+    color: #474747;
+    float: right;
+    font-size: 14px;
+    line-height: 24px;
+    width: 609px;
+	margin-bottom: 30px;
+}
+#content.page {
+    font-size: 14px;
+}
+#content.page ul {
+	margin: 0 0 12px 0;
+}
+#content ul, #content li, #content ol {
+    list-style-position: outside !important;   
+    margin: 0 0 0 15px;
+}
+
+body.page #content ul, body.page #content li, body.page #content ol {
+    list-style-position: outside !important;    
+    margin: 0 0 0 15px;
+}
+
+
+
+#content.page.cart li h3 {
+    bottom: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    left: 20px;
+    line-height: 18px;
+    margin: 5px 0 0;
+    padding: 0;
+    position: relative;
+}
+#content.not-found {
+    padding-top: 220px;
+}
+#content.search h1 {
+    position: relative;
+    top: 220px;
+}
+#content a {
+    color: #D63212;
+    text-decoration: none;
+
+}
+#content a:hover {
+    text-decoration: underline;
+}
+
+#content hr { height: 1px; color: #999; background-color: #999; border: 0; margin: 16px 0px 12px 0px; }
+
+
+#previous-posts {
+    float: left;
+    margin: 0 0 30px;
+}
+#newer-posts {
+    float: right;
+    margin: 0 0 30px;
+}
+#previous-posts a, #newer-posts a {
+    color: #474747;
+    font-size: 14px;
+    text-decoration: none;
+}
+#previous-posts a:hover, #newer-posts a:hover {
+	color: #d63212;
+}
+#content .main-post {
+    border-bottom: 1px solid #B8B8B8;
+    margin: 0 0 31px;
+    padding: 61px 0 48px;
+}
+
+#content p {     
+	margin: 18px 0px 0px 0px; display: block;
+}
+
+#content h1 {
+    color: #474747;
+    font-size: 29px;
+    font-weight: normal;
+    line-height: 34px;
+}
+#content .main-post div.share {
+	margin: 32px 0 0;
+}
+#content .main-post div.share iframe {
+    float: left;
+    width: 100px !important;
+}
+#content .main-post h2 {
+    font-size: 30px;
+    line-height: 34px;
+    padding-bottom: 15px;
+    padding-top: 28px;
+    font-weight: normal;
+}
+#content .main-post.single h2 {
+    color: #D63212;
+    padding-bottom: 10px;
+}
+#content .main-post h2 a {
+	color: #d63212;
+	text-decoration: none;
+}
+#content .main-post div.content {
+    color: #474747;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 17px 0 0;
+}
+#content .main-post div.content p.last {
+    margin: 0 0 4px;
+}
+#content .main-post div.posted-on {
+    color: #474747;
+    float: left;
+    font-size: 11px;
+    margin: 0 6px 0 0;
+}
+#content .main-post div.categories {
+    font-size: 11px;
+    color: #474747;
+}
+#content div.categories {
+    display: none;
+}
+#content .main-post div.categories a {
+    text-decoration: none;
+    color: #d63212;
+    /*color: #474747;*/
+}
+#content .main-post div.categories a:hover {
+    text-decoration: underline;
+}
+#content .post {
+    border-bottom: 1px solid #B8B8B8;
+    margin: 0 0 31px;
+    padding: 0 0 29px;
+}
+#content .post a img {
+    float: left;
+    padding: 0 10px 0 0;
+}
+#content .post h2 {
+    bottom: 4px;
+    font-weight: normal;
+    margin: 0 0 16px 231px;
+    position: relative;
+}
+#content.search .post h2 {
+    bottom: 4px;
+    font-weight: normal;
+    margin: 16px 0 0;
+    position: relative;
+}
+#content .post.single h2 {
+    color: #D63212;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0;
+    padding-bottom: 15px;
+}
+#content .post h2 a {
+    color: #D63212;
+    text-decoration: none;
+    font-size: 29px;
+    line-height: 34px;
+}
+
+#content h3 { margin-top: 18px; }
+#content h4 { margin-top: 18px; }
+#content h5 { margin-top: 18px; font-size: 18px; color: #deb305; }
+
+#content .post div.content {
+    color: #474747;
+    font-size: 14px;
+    line-height: 24px;
+}
+#content .post div.content p.last {
+    margin: 0 0 4px;
+}
+#content .post div.bottom {
+    color: #474747;
+    font-size: 11px;
+}
+#content .post span.posted-on {
+    margin: 0 6px 0 0;
+}
+#content .post div.bottom a {
+    color: #d63212;
+    text-decoration: none;
+}
+#content .post div.bottom a:hover {
+    text-decoration: underline;
+}
+#content .post.no-img > h2, #content .post.no-img > div {
+    margin: 0 0 16px;
+}
+
+/* Content > page
+-----------------------------------------------------------------------------*/
+#heading {
+    color: #FFFFFF;
+    font-size: 30px;
+    height: 131px;
+    line-height: 34px;
+    overflow: hidden;
+    padding: 62px 0 48px;
+}
+#heading.forum {
+    padding-bottom: 0;
+}
+#breadcrumbs {
+    margin: 33px 0 25px;
+}
+#breadcrumbs > ul {
+    margin: 0 !important;
+}
+#content #breadcrumbs li {
+    color: #D63212;
+    float: left;
+    font-size: 14px;
+    list-style-type: none !important;
+    margin: 0 !important;
+}
+#breadcrumbs li a {
+    color: #474747 !important;
+    text-decoration: none;
+}
+#breadcrumbs li span {
+    padding: 0 5px;
+}
+#content.page h1 {
+    margin: 0 0 21px 0;
+}
+#content.page a {
+    color: #d63212;
+    text-decoration: none;
+}
+#content.page a:hover {
+    text-decoration: underline;
+}
+#related-articles {
+    
+}
+#related-articles h3 {
+    margin-top: 0 !important;
+    border: none !important;
+}
+#sidebar .menu li li {
+    border-top: 1px solid #B8B8B8;
+    padding: 0;
+	list-style-type: none;
+}
+.widget_nav_menu h3 {
+    border: medium none !important;
+    margin: 0 !important;
+}
+
+#featured-project {
+
+}
+#featured-project h3 {
+    border: medium none !important;
+    padding-bottom: 20px !important;
+}
+
+
+/* Comments
+-----------------------------------------------------------------------------*/
+#content li.comment {
+    color: #474747;
+}
+#content li.comment > div {
+    background: none repeat scroll 0 0 #F2F2F2;
+    margin: 0 0 20px;
+    padding: 39px 50px 20px 29px;
+}
+#content li.comment .comment-author img {
+    float: left;
+}
+#content li.comment .comment-author span {
+    color: #D63212;
+    float: left;
+    font-size: 12px;
+    margin: 0 6px 0 20px;
+}
+#content li.comment .comment-meta {
+    margin: 0 0 0 60px;
+}
+#content li.comment .comment-body {
+    margin: 8px 0 0 60px;
+}
+#reply-title {
+    color: #D63212;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 24px 0 3px;
+}
+#commentform p {
+    line-height: 22px;
+    margin: 0 0 13px;
+}
+#commentform input[type="text"] {
+    border: 1px solid #7C7C7C;
+    float: left;
+    height: 15px;
+    margin: 0 10px 0 0;
+    padding: 3px;
+    width: 230px;
+}
+#commentform textarea {
+    border: 1px solid #7C7C7C;
+    display: block;
+    height: 130px;
+    margin: 0 10px 0 0;
+    padding: 3px;
+    width: 480px;
+}
+#commentform input[type="submit"] {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/post-comment.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 37px;
+    position: relative;
+    top: 26px;
+    width: 165px;
+}
+
+
+/* Sidebar
+-----------------------------------------------------------------------------*/
+#sidebar, #sidebar2 {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/sidebar-bg.png") repeat-x scroll center top #F2F2F2;
+    border-bottom: 1px solid #ADADAD;
+    color: #474747;
+    float: left;
+    font-size: 14px;
+    margin: 0 0 20px;
+    padding: 35px 26px 30px;
+    width: 177px;
+}
+#login-signup {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/login-signup.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 37px;
+    margin: 70px 0 0;
+    position: absolute;
+    width: 165px;
+}
+#sidebar-content {
+    margin: 20px 0 0 0;
+}
+#sidebar-content h2 { 
+	color: #D63212;
+	padding-bottom: 8px;
+}
+
+#sidebar-content li {
+    border-top: 1px solid #B8B8B8;
+    padding: 0;
+}
+#sidebar-content li a {
+    
+}
+#post-comment {
+    margin: 120px 0 0;
+    position: absolute;
+}
+#sidebar ul {
+	
+}
+#searchform input[type="text"], .search-form input[type="text"] {
+    border-color: #DB5A5A -moz-use-text-color #DB5A5A #DB5A5A;
+    border-style: solid none solid solid;
+    border-width: 1px medium 1px 1px;
+    color: #999999;
+    font-family: arial;
+    font-size: 12px;
+    height: 15px;
+    padding: 7px 12px;
+    width: 112px;
+}
+#searchform input[type="submit"], .search-form input[type="submit"] {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/search-submit.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 31px;
+    position: relative;
+    right: 4px;
+    width: 36px;
+}
+#sidebar .widget_search {
+    
+}
+#sidebar h3, #sidebar2 h3 {
+    border-bottom: 1px solid #B8B8B8;
+    color: #D63212;
+    margin-top: 47px;
+    padding-bottom: 8px;
+}
+#sidebar .how-to-use-pcb {
+    margin: 20px 0 0 0;
+}
+#sidebar .how-to-use-pcb h3 {
+    margin: 0;
+    border: none;
+}
+#sidebar .how-to-use-pcb li {
+    border-top: 1px solid #B8B8B8;
+    line-height: 16px;
+    padding: 0;
+}
+#sidebar .share-button a {
+    display: inline;
+}
+#sidebar .popular-posts h3 {
+    border: none;
+}
+#sidebar li a, #sidebar2 li a {
+    color: #474747;
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+}
+#sidebar li a:hover, #sidebar li.current_page_item > a, #sidebar2 li a:hover, #sidebar2 li.current_page_item > a, #sidebar li.on a {
+    color: #d63212;
+}
+#sidebar .widget-container li, #sidebar2 .widget-container li {
+    line-height: 16px;
+    padding-bottom: 9px;
+    padding-top: 8px;
+}
+#sidebar .popular-posts li {
+    border-top: 1px solid #B8B8B8;
+    padding: 0;
+}
+#recentcomments a {
+    display: inline !important;
+}
+#archives-2 li, #categories-2 li {
+    padding: 0 !important;
+}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+#footer {
+    height: 53px;
+}
+#footer .inner-container {
+    margin: 0 auto;
+    padding: 17px 0 0;
+    width: 915px;
+}
+#footer span {
+    color: #2f2f2f;
+    font-size: 11px;
+}
+#footer a {
+    margin-left: 18px;
+    position: relative;
+    top: 7px;
+}
+.addtoany_list {
+    float: left;
+}
+.addtoany_list a {
+
+}
+li.share-button {
+    border-bottom: 1px solid #B8B8B8;
+    border-top: 1px solid #B8B8B8;
+    height: 50px;
+    line-height: 50px;
+    margin: 40px 0 0;
+}
+#customer-testimonials {
+
+}
+#customer-testimonials h3 {
+    border: medium none !important;
+    padding-bottom: 20px !important;
+}
+#customer-testimonials p {
+	line-height: 24px;
+}
+.share-button > span {
+    margin: 0 5px;
+}
+.share-button > a {
+    margin: 0 3px 0 0;
+    position: relative;
+    top: 4px;
+}
+#inner-content.pcb .p2 {
+
+}
+#inner-content.pcb .p2 h2 {
+    border-bottom: 1px solid #B8B8B8;
+    line-height: 28px;
+    margin: 0 0 27px;
+    padding: 26px 0 0;
+}
+#inner-content.pcb .p2 li {
+    float: left;
+    list-style: none outside none !important;
+    margin: 0;
+    overflow: hidden;
+    padding: 8px;
+    text-align: left;
+    width: 187px;
+}
+#inner-content.pcb .p2 li:hover {
+	background: #fdebe9;
+}
+#inner-content.pcb .p2 li > a {
+    display: block;
+    height: 141px;
+    width: 190px;
+}
+#inner-content.pcb .p2 li > h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 7px 0 0;
+}
+#inner-content.pcb .p2 li > h3 a {
+    color: #474747;
+    text-decoration: none;
+}
+#inner-content.pcb .p2 li > p {
+    font-size: 12px;
+    height: 52px;
+    line-height: 16px;
+    margin: 0;
+    overflow: hidden;
+}
+#inner-content.pcb .p3 {
+    clear: both;
+    float: left;
+    margin: 30px 0 58px;
+    width: 286px;
+}
+#inner-content.pcb .p3 h2 {
+    border-bottom: 1px solid #B8B8B8;
+    margin: 0 0 32px;
+	padding: 0 0 5px;
+    width: 324px;
+}
+#inner-content.pcb .p3 li {
+    background: none repeat scroll 0 0 #F2F2F2;
+    font-size: 12px;
+    height: 80px;
+    line-height: 14px;
+    margin: 0 0 11px;
+    overflow: hidden;
+    padding: 10px 10px 11px;
+}
+#inner-content.pcb .p3 li:hover {
+	background: #fdebe9;
+}
+#inner-content.pcb .p3 li > a {
+    float: left;
+    margin: 0 10px 0 0;
+}
+#inner-content.pcb .p3 li > h3 {
+    font-weight: bold;
+    margin: 0;
+}
+#inner-content.pcb .p3 li > h3 a {
+    color: #474747;
+    display: block;
+    font-size: 13px;
+    margin: 10px 0 5px;
+    text-decoration: none;
+}
+#inner-content.pcb .p3 li > p {
+    height: 45px;
+    margin: 0;
+    overflow: hidden;
+}
+#inner-content.pcb .p4 {
+    float: right;
+    margin: 30px 0 0;
+    width: 286px;
+}
+#inner-content.pcb .p4 h2 {
+    border-bottom: 1px solid #B8B8B8;
+    margin: 0 0 32px;
+	padding: 0 0 5px;
+    width: 286px;
+}
+#inner-content.pcb .p4 li {
+    background: none repeat scroll 0 0 #F2F2F2;
+    font-size: 12px;
+    height: 80px;
+    line-height: 14px;
+    margin: 0 0 11px;
+    overflow: hidden;
+    padding: 10px 10px 11px;
+}
+#inner-content.pcb .p4 li:hover {
+	background: #fdebe9;
+}
+#inner-content.pcb .p4 li > a {
+    float: left;
+    margin: 0 10px 0 0;
+}
+#inner-content.pcb .p4 li > h3 {
+    font-weight: bold;
+    margin: 0;
+}
+#inner-content.pcb .p4 li > h3 a {
+    color: #474747;
+    display: block;
+    font-size: 13px;
+    margin: 10px 0 5px;
+    text-decoration: none;
+}
+#inner-content.pcb .p4 li > p {
+    height: 45px;
+    margin: 0;
+    overflow: hidden;
+}
+#news-rss {
+    margin: -40px 0 0 392px;
+    position: absolute;
+}
+#sidebar .current_page_item, #sidebar .current-page-ancestor, #sidebar .current-menu-ancestor {
+    display: block !important;
+}
+#sidebar .current_page_item li, #sidebar .current-page-ancestor li, #sidebar .current-menu-ancestor li {
+    display: block !important;
+}
+#sidebar .current_page_item > a, #sidebar .current-page-ancestor > a, #sidebar .current-menu-ancestor > a {
+    display: none;
+}
+#sidebar .sub-menu .current_page_item > a {
+    display: block !important;
+}
+#sidebar .menu li {
+    display: none;
+}
+#sidebar > h2 {
+    color: #D63212;
+    padding-bottom: 8px;
+}
+
+#sidebar.cart h2 {
+    border-bottom: 1px solid #B8B8B8;
+    margin: 0 0 4px;
+}
+#sidebar.cart p {
+    line-height: 24px;
+}
+#content.cart #inner-menu {
+    float: left;
+    margin: 0 11px 0 0;
+}
+#content.cart #inner-menu li {
+    clear: both;
+}
+#content.cart #inner-menu li span {
+    float: left;
+    line-height: 34px;
+    margin: 0 0 0 10px;
+    width: 25px;
+}
+#content.cart #inner-menu li a {
+    border-bottom: 1px solid #CDCDCD;
+    border-left: 1px solid #CDCDCD;
+    border-right: 1px solid #CDCDCD;
+    color: #474747;
+    display: block;
+    line-height: 33px;
+    padding: 0 15px 0 34px;
+    text-align: left;
+}
+#content.cart #inner-menu li.first a {
+    border-top: 1px solid #cdcdcd;
+}
+#content.cart #inner-menu li.active a {
+    background: none repeat scroll 0 0 #878787;
+    text-decoration: none;
+    color: #ffffff;
+}
+#content.cart #inner-menu li.active span {
+    color: #ffffff;
+}
+#content.cart #inner-menu li a:hover {
+    text-decoration: none;
+}
+#content.cart .inner-content {
+    border: 1px solid #CCCCCC;
+    float: right;
+    padding: 27px;
+    width: 360px;
+}
+#content.cart .inner-content li {
+    margin: 0 0 5px !important;
+}
+#content.cart .inner-content li label {
+    bottom: 4px;
+    left: 5px;
+    line-height: 16px;
+    position: relative;
+}
+#content.cart .inner-content input[type="radio"] {
+    float: left;
+    height: 16px;
+    width: 16px;
+}
+#content.cart .inner-content.part-1 > p {
+
+}
+#content.cart .inner-content.part-1 p input[type="text"] {
+    border: 1px solid #C3C3C3;
+    height: 18px;
+    padding: 3px;
+    position: relative;
+    width: 150px;
+}
+#content.cart .inner-content.part-1 li {
+
+}
+#content.cart .inner-content.part-1 li label {
+    left: 10px;
+    position: relative;
+    top: 2px;
+}
+#content.cart .inner-content.part-1 li input {
+
+}
+.button {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/button-bg.png") repeat-x scroll 0 0 transparent;
+    border: none;
+    border-left: 1px solid #DA5C5C;
+    border-right: 1px solid #DA5C5C;
+    color: #FFFFFF !important;
+    cursor: pointer;
+    float: right;
+    font-family: Arial,Tahoma,Verdana,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 31px;
+    line-height: 31px;
+    padding: 0 60px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.button:hover {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/button-bg.png") repeat-x scroll 0 -31px transparent;
+    border-right: 1px solid #d77d7d;
+    border-left: 1px solid #d77d7d;
+}
+a.prev {
+    float: left;
+}
+a.next {
+    float: right;
+}
+#content.cart .inner-content a.next:hover, #content.cart .inner-content a.prev:hover {
+    text-decoration: none;
+}
+#content.cart .inner-content.part-1 {
+    display: block;
+}
+#content.cart .inner-content.part-1 div.guide {
+    margin: 80px 0;
+    clear: both;
+}
+#content.cart .inner-content.part-1 div.guide h3 {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+}
+#content.cart .inner-content.part-1 div.guide > p {
+    margin: 15px 0 0;
+}
+
+#content.cart .inner-content.part-1 label {
+
+}
+#content.cart .inner-content.part-2 {
+    
+}
+#content.cart .inner-content.part-2 p {
+    margin: 9px 0 18px 0;
+}
+#content.cart .inner-content.part-3 {
+    
+}
+#content.cart .inner-content.part-3 li label {
+    
+}
+#content.cart .inner-content.part-3 li span {
+    bottom: 2px;
+    color: #D94A4A;
+    display: block;
+    font-size: 11px;
+    left: 18px;
+    line-height: 12px;
+    position: relative;
+    width: 80%;
+}
+#content.cart .inner-content.part-3 li span a {
+    color: #CB1414;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#content.cart .inner-content.part-3 li span a:hover {
+    text-decoration: none;
+}
+#content.cart .inner-content.part-3 li p {
+    font-size: 13px;
+    left: 18px;
+    line-height: 16px;
+    margin: 0 0 20px;
+    position: relative;
+    width: 90%;
+}
+#content.cart .inner-content.part-4 {
+
+}
+#content.cart .inner-content.part-4 li {
+    
+}
+#content.cart .inner-content.part-5 {
+    
+}
+#content.cart .inner-content.part-5 li {
+    
+}
+#content.cart .inner-content.part-6 {
+    
+}
+#content.cart .inner-content.part-6 li {
+    
+}
+#content.cart .inner-content.part-7 {
+    
+}
+#content.cart .inner-content.part-7 p {
+    clear: both;
+    margin: 0 0 10px;
+}
+#separate-billing-address {
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+}
+#content.cart .inner-content.part-7 p span.helptext {
+    color: #9A9898;
+    float: left;
+    font-size: 10px;
+    left: 120px;
+    line-height: 12px;
+    margin: 3px 0 15px;
+    position: relative;
+    width: 240px;
+}
+#content.cart .inner-content.part-7 div.info {
+    margin: 0 0 20px;
+}
+#content.cart .inner-content.part-7 form p span a {
+    color: #9A9898;
+    text-decoration: underline;
+}
+#content.cart .inner-content.part-7 form p span a:hover {
+    text-decoration: none;
+}
+#content.cart .inner-content.part-7 label {
+    float: left;
+    font-size: 12px;
+    line-height: 14px;
+    position: relative;
+    top: 5px;
+    width: 120px;
+}
+#content.cart .inner-content.part-7 p input {
+    font-family: arial;
+    font-size: 12px;
+    width: 180px;
+}
+#content.cart .inner-content.part-7 p select {
+    border: 1px solid #C3C3C3;
+    height: 26px;
+    padding: 4px 2px 3px 0;
+    width: 188px;
+}
+#content.cart .inner-content.part-7 p.navigation {
+    margin: 50px 0 0;
+}
+#content.cart .inner-content.part-7 ul.errorlist li {
+    clear: both;
+    left: 120px;
+    position: relative;
+    top: 5px;
+}
+#content.cart .inner-content.part-7 div.billing_address_form {
+    display: none;
+    margin: 0 0 30px;
+    clear: both;
+}
+#content.cart .inner-content.part-8 {
+    
+}
+#content.cart .inner-content.part-8 p {
+    clear: both;
+    margin: 0 0 10px;
+}
+#content.cart .inner-content.part-8 label {
+    float: left;
+    font-size: 12px;
+    line-height: 14px;
+    position: relative;
+    top: 5px;
+    width: 120px;
+}
+#content.cart .inner-content.part-8 p select {
+    border: 1px solid #C3C3C3;
+    height: 26px;
+    padding: 4px 2px 3px 0;
+    width: 188px;
+}
+#content.cart .inner-content.part-8 p.navigation {
+    margin: 50px 0 0;
+}
+#content.cart .inner-content.part-8 ul.errorlist li {
+    clear: both;
+    left: 120px;
+    position: relative;
+    top: 5px;
+}
+#content.cart .inner-content.part-9 {
+
+}
+#order-summary {
+    line-height: 16px;
+    font-size: 12px;
+}
+#order-summary code {
+    display: block;
+    font-size: 13px;
+}
+#order-summary p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 10px;
+}
+#content.cart .inner-content.part-9 p {
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    padding: 0;
+}
+#content.cart .inner-content.part-9 form {
+    margin: 30px 0 0 0;
+}
+#content.cart .inner-content.part-9 form > a {
+    display: none;
+}
+#content.cart .inner-content.part-9 p.navigation {
+    margin: 40px 0 0;
+}
+#content.cart .inner-content.part-9 .confirm {
+    float: right !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 162px;
+}
+#content.cart .inner-content.part-9 label {
+    float: left;
+    font-size: 11px;
+    width: 130px;
+}
+#content.cart .inner-content.part-9 input[type="text"] {
+    width: 180px;
+}
+#content.cart .inner-content.part-9 #id_countrycode {
+    width: 187px;
+}
+#content.cart .inner-content.part-9 select {
+    border: 1px solid #C3C3C3;
+    height: 26px;
+    padding: 3px 2px 3px 5px;
+    position: relative;
+}
+#content.cart .inner-content.part-9 input[type="submit"] {
+    float: left;
+    margin: 30px 0 0;
+}
+#content.cart .inner-content.part-9 ul.errorlist li {
+    margin: 0 !important;
+    position: relative;
+    top: 3px;
+}
+#content.cart .inner-content.part-9 form p {
+    margin: 5px 0;
+}
+#content.cart .inner-content.part-9 form > img {
+    margin: -95px 0 0 210px;
+    position: absolute;
+}
+#content.cart .inner-content .wpsc_variation_forms {
+    min-height: 150px;
+}
+#content.cart .inner-content .wpsc_buy_button {
+    display: none;
+}
+#content.cart .inner-content .make_purchase {
+    cursor: pointer;
+    display: inline;
+    font-size: 12px !important;
+    left: 190px;
+    padding: 0 40px;
+}
+#wpsc_shopping_cart_container {
+    width: 405px;
+}
+#content.cart .inner-content input[type="text"] {
+    border: 1px solid #C3C3C3;
+    height: 18px;
+    padding: 3px;
+    position: relative;
+}
+#content table.wpsc_checkout_table, #content table.wpsc_checkout_table tr td {
+    padding: 5px 0 0 !important;
+}
+#checkout_page_container table.checkout_cart {
+    margin: 15px 0;
+}
+#content table.wpsc_checkout_table.table-1 {
+    margin: 15px 0;
+}
+#content.cart #checkout_total .pricedisplay {
+    margin: 0 0 0 10px;
+}
+.qtrans_flag span {
+    display: none;
+}
+.qtrans_flag {
+    display: block;
+    height: 12px;
+    width: 18px;
+}
+.qtrans_flag_and_text {
+    padding-left: 20px;
+}
+.qtrans_flag_en {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/flags/gb.png") no-repeat scroll 0 0 transparent !important;
+}
+.qtrans_flag_de {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/flags/de.png") no-repeat scroll 0 0 transparent !important;
+}
+.qtrans_flag_cn{
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/flags/cn.png") no-repeat scroll 0 0 transparent !important;
+}
+#qtranslate {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+/* #qtranslate > li  */
+#qtranslate ul li.widget_qtranslate, #qtranslate li.widget_qtranslate {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/lang-bg.png") repeat-x scroll 0 0 transparent;
+    height: 11px; width:180px;
+    padding: 13px 11px;
+    position: absolute;
+    right: 0;
+}
+#qtranslate .widget-container {
+
+}
+#qtranslate .widget-container li {
+    bottom: 2px;
+    float: left;
+    margin: 0 10px 0 0;
+    position: relative;
+    text-align: center;
+    width: 50px;
+}
+#qtranslate .widget-container li a {
+    color: #FFFFFF;
+    display: inline;
+    padding: 0 0 0 23px;
+    text-decoration: none;
+}
+#qtranslate .widget-container li a:hover {
+    text-decoration: underline;
+}
+#qtranslate .widget-container li a span {
+    bottom: 1px;
+    font-size: 11px;
+    font-weight: normal;
+    position: relative;
+}
+#qtranslate-3-chooser {
+    width: 180px !important;
+}
+#content.movies .inner-content {
+
+}
+#content.movies .ui-tabs-panel li {
+    float: left;
+    height: 200px;
+    margin: 0 12px 12px 0;
+    overflow: hidden;
+    width: 126px;
+}
+#content.movies ul.ui-tabs-nav li.ui-tabs-selected {
+
+}
+#content.movies .ui-widget-header {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    left: 18px;
+    position: relative;
+    top: 5px;
+}
+#content.movies ul.ui-tabs-nav li {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/button-bg.png") repeat-x scroll 0 0 transparent;
+    border: medium none;
+    border-left: 1px solid #DA5C5C;
+    border-right: 1px solid #DA5C5C;
+    height: 31px;
+    line-height: 31px;
+    list-style-type: none !important;
+    margin: 0 5px 0 0;
+    overflow: visible;
+    padding: 0;
+    width: auto;
+}
+#content.movies ul.ui-tabs-nav li:hover, #content.movies ul.ui-tabs-nav li.ui-tabs-selected {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/video-button-bg.png") repeat-x scroll 0 -31px transparent;
+    border-right: 1px solid #d77d7d;
+    border-left: 1px solid #d77d7d;
+}
+#content.movies ul.ui-tabs-nav li a {
+    color: #FFFFFF;
+    display: block;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 19px;
+    text-transform: uppercase;
+    width: auto;
+}
+.ui-corner-top {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+#content.movies ul.ui-tabs-nav li a:hover {
+    text-decoration: none;
+}
+#content.movies .inner-content li.last-in-row {
+    margin-right: 0;
+}
+#content.movies .ui-tabs-panel li > a {
+    display: block;
+    height: 100px;
+    overflow: hidden;
+    width: 140px;
+}
+#content.movies .inner-content li > a:hover {
+
+}
+#content.movies .inner-content li h2 {
+    height: 60px;
+    line-height: 16px;
+    padding: 5px;
+}
+#content.movies .inner-content li h2 a {
+    color: #4D4D4D;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 15px;
+    text-decoration: none;
+}
+#content.movies .inner-content li h2 a:hover {
+
+}
+#learn-more-button {
+    float: left;
+    line-height: 31px;
+    overflow: hidden;
+    padding: 0 10px;
+    right: 3px;
+    top: 20px;
+    width: 160px;
+}
+#buy-now-button {
+    float: left;
+    left: 40px;
+    padding: 0 40px;
+}
+.ppt {
+    display: none !important;
+}
+.post-date {
+    font-size: 10px;
+    margin: 0 0 0 4px;
+}
+.wpsc_product_quantity {
+    display: none;
+}
+.wpsc_product_remove {
+    display: none;
+}
+.wpsc_product_price {
+    display: none;
+}
+#content #checkout_page_container table.checkout_cart tr.product_row td.wpsc_product_name {
+    width: 300px !important;
+}
+#content.user-upload {
+    
+}
+#content.user-upload form > table {
+    margin: 0 0 30px;
+}
+#content.user-upload select {
+    border: 1px solid #C3C3C3;
+    height: 26px;
+    margin: 5px 0 0;
+    padding: 3px;
+    position: relative;
+}
+#content.user-upload textarea {
+    border: 1px solid #C3C3C3;
+    padding: 3px;
+    position: relative;
+}
+#content.user-upload font {
+    bottom: 5px;
+    font-size: 10px;
+    line-height: 12px;
+    position: relative;
+}
+#content.user-upload input[type="text"] {
+    border: 1px solid #C3C3C3;
+    height: 18px;
+    margin: 0 0 5px;
+    padding: 3px;
+    position: relative;
+}
+#content.user-upload input[type="submit"], #content.user-upload input[type="reset"] {
+    top: 20px;
+}
+#content.user-upload input[type="submit"] {
+    float: left;
+    left: 85px;
+}
+#paginate {
+    
+}
+#forum-iframe {
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 1007px;
+}
+#forum-iframe iframe {
+    bottom: 161px;
+    display: inline;
+    height: 1000px;
+    overflow-x: hidden;
+    position: relative;
+    width: 1007px;
+}
+#forum-bottom-border {
+    
+}
+.pp_social {
+    display: none;
+}
+#menu-active-bg {
+    display: none;
+    float: left;
+}
+
+/*============================*/
+/*=== Custom Slider Styles ===*/
+/*============================*/
+#slider-wrapper {
+    background:url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/slider.png) no-repeat;
+    width:998px;
+    height:392px;
+    margin:0 auto;
+    padding-top:74px;
+    margin-top:-45px;
+}
+#slider {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/loading.gif") no-repeat scroll 50% 50% transparent;
+    height: 246px;
+    margin: 20px 0 0;
+    position: relative;
+    width: 423px;
+}
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav {
+    bottom: -30px;
+    left: 120px;
+    position: absolute;
+}
+.nivo-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a { 
+    color:#efe9d1;
+    text-decoration:underline;
+}
+.nivo-caption {
+    font-size: 11px;
+    line-height: 12px;
+    padding: 20px;
+    width: 570px;
+}
+.nivo-caption h4 {
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 !important;
+}
+.nivo-caption p {
+    margin: 0 !important;
+    padding: 5px 0 0;
+}
+.nivo-caption p.note.first {
+    margin-top: 10px !important;
+}
+.nivo-caption p.note {
+    font-size: 9px;
+    line-height: 10px;
+}
+.nivo-caption li {
+
+}
+
+#home-link-1 {
+    display: block;
+    margin: 0 0 15px;
+}
+#home-link-2 {
+    display: block;
+}
+#checkout_page_container .wpsc_make_purchase {
+    float: left !important;
+    position: static !important;
+}
+.widget_archive li {
+    padding: 0 !important;
+}
+#feedback {
+    left: 0;
+    position: fixed;
+    top: 40%;
+}
+#feedback > a.feedback {
+    background: url(http://www.cadsoft.de/wp-content/themes/cadsoft/images/feedback.png) no-repeat scroll 0 0 transparent;
+    display: block;
+    width: 30px;
+    height: 105px;
+}
+#feedback > div {
+    background: none repeat scroll 0 0 #333333;
+    color: #FFFFFF;
+    font-size: 16px;
+    left: 50%;
+    display: none;
+    margin: 0 0 0 -200px;
+    opacity: 0.95;
+    padding: 20px;
+    position: fixed;
+    top: 150px;
+    width: 360px;
+    z-index: 9999;
+}
+#feedback input[type="text"] {
+    border: 1px solid #ABADB3;
+    font-size: 12px;
+    height: 15px;
+    padding: 3px 5px;
+}
+#feedback form p {
+    font-size: 12px;
+}
+#feedback span span {
+    color: #000;
+}
+#feedback a.close {
+    background: url("http://www.cadsoft.de/wp-content/themes/cadsoft/images/close.png") no-repeat scroll 0 0 transparent;
+    height: 42px;
+    left: 50%;
+    margin: 29px 0 0 179px;
+    position: fixed;
+    top: 100px;
+    width: 42px;
+    z-index: 99999;
+    display: none;
+}
+ul.errorlist li {
+    color: #D94A4A;
+    font-size: 10px;
+}
+p.errorlist {
+    color: #D94A4A;
+    font-size: 10px;
+}
+#text-11 div.textwidget p, #text-12 div.textwidget p {
+    font-size: 11px;
+    line-height: 14px;
+    margin: 5px 0 5px;
+}
+#text-11 div.textwidget h4, #text-12 div.textwidget h4 {
+    margin: 15px 0 0;
+}
+#text-11 div.textwidget a, #text-12 div.textwidget a {
+    display: inline;
+}
+
+#content.prices {
+
+}
+#content.prices p.footer {
+    font-size: 11px;
+    line-height: 14px;
+}
+#content.prices p {
+    margin: 9px 0;
+}
+#content.prices table {
+    margin: 0 0 40px;
+}
+
+#content.prices table tr td { border-bottom: 1px solid #ccc; padding: 3px 4px 3px 6px; }
+#content.prices table tr td.column { background: #f6f6f6; }
+#content.prices table tr td.title { background: #edeaea; }
+
+
+
+#update-submit {
+    display: none;
+}
+
+#content.cart div.upgrade-1 {
+
+}
+#content.cart div.upgrade-1 h2 {
+
+}
+#content.cart div.upgrade-1 p {
+    margin: 0 0 9px;
+}
+#content.cart div.upgrade-1 label {
+
+}
+#content.cart div.upgrade-1 input[type=text] {
+
+}
+#content.cart div.upgrade-1 input[type=submit] {
+
+}
+#content.cart div.upgrade-1 ul.errorlist li {
+    position: relative;
+    top: 7px;
+}
+
+#bottom-menu .inner-container > ul > li.first { display: none; }
+
+#bottom-menu.brwsr-firefox-36 .inner-container ul li.first { display:block !important; }
+
+#license {
+
+}
+#license table font {
+    bottom: 5px;
+    font-size: 10px;
+    position: relative;
+}
+#license input[type="text"] {
+    border: 1px solid #C3C3C3;
+    height: 18px;
+    padding: 3px;
+    position: relative;
+}
+
+
+/* iframe box */
+
+.cadsoft-iframe-box { clear:both; float:right; width:915px !important; margin-bottom:40px; }
+.cadsoft-iframe-box a, .cadsoft-iframe-box a:link, .cadsoft-iframe-box a:visited, .cadsoft-iframe-box a:hover { color:#d63212; text-decoration:none; }
+.cadsoft-iframe-box a:hover { text-decoration:underline; }
+
+.cadsoft-iframe-box table { width:915px !important; }
+
+.cadsoft-iframe-box table, .cadsoft-iframe-box td { border:1px solid #999; }
+.cadsoft-iframe-box td { padding:2px; background:transparent !important; }
+
+
+.quick-search-input-box input#id_search { padding:7px 12px; height:15px; width:148px;  }
+
+/*
+.cadsoft-iframe-box ul li { clear:both; }
+.cadsoft-iframe-box p { padding:5px 0; display:block; float:left; border:1px solid #999; }
+*/
+
+
+div.upgrade-summary {
+
+}
+div.upgrade-summary code, div.upgrade-pricing code, div.upgrade-confirmation code {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 15px 0 25px;
+}
+code span {
+    float: right;
+    margin: 0 0 0 30px;
+}
+code span.left {
+    float: left;
+    margin: 0;
+    max-width: 240px;
+}
+code b, code br {
+    clear: both;
+}
+
+.xoxo-search { float:left; margin-bottom:20px; }
+
+form.wpcf7-form { margin-top: 20px; margin-bottom: 40px; }
+
+/* #qtranslate-3-chooser .qtrans_flag_cn { display:none !important; } */
+
+/*--------------------*/
+input[type="text"], input[type="password"], select, textarea {
+	padding: 7px 12px;
+    width: 250px;
+	vertical-align: middle;	
+}
+.files {
+	padding: 7px 12px;    
+	vertical-align: middle;	
+}
+textarea {
+	width: 350px;
+	resize: none;
+	margin-bottom: 10px;
+}
+.search_box {
+	height: 15px;
+    padding: 7px 12px;
+    width: 148px !important;
+	vertical-align: middle;	
+}
+label {
+	display: block;
+}
+.submit, .input {
+	display: inline;
+	float: left;
+}
+.submit {	
+    margin-left: 10px;
+}
+#Login .input, #Register .input, #Edit .input, #Reset .input, #Upload .input {	
+	float: none;
+}
+#Login .input input[type="text"], #Register .input input[type="text"], #Edit .input input[type="text"], #Reset .input input[type="text"], #Upload .input input[type="text"] {	
+	margin-bottom: 10px;
+}
+#Login .submit, #Register .submit, #Edit .submit, #Reset .submit, #Upload .submit {	
+    margin-left: 0;	
+}
+.file_list_item {
+	padding: 5px 10px;
+	min-height: 84px;
+	width: 560px;
+	background: url('http://www.cadsoftusa.com/downloads/app/webroot/img/ULP_list_bg.jpg') repeat-x rgb(237,237,237);
+	border: 1px solid rgb(202,202,202);
+	margin-bottom: 5px;
+	overflow: auto;
+}
+.file_list_item_left {
+	float: left;
+	width: 440px;
+}
+.file_list_item_right {
+	float: right;	
+	margin-top: 5px;
+	text-align: right;
+}
+.file_list_like_item {
+	background: url('http://www.cadsoftusa.com/downloads/app/webroot/img/file_list_like_bg.jpg') repeat-x;
+	width: 99px;
+	height: 33px;
+	padding-top: 7px;
+	margin-top: 40px;
+	border-left: 1px solid rgb(211,211,211);
+	border-right: 1px solid rgb(211,211,211);
+}
+.file_list_like_item label {
+	color: rgb(188,16,0);
+	margin: 10px 10px 0 0;
+	font-weight: bold;
+	display: inline;
+}
+.files_descr {
+	font-size: 12px;
+	line-height: 15px;
+	min-height: 29px;
+}
+.some_descr {
+	font-size: 12px;
+	line-height: 18px;
+}
+.files_footer div img {
+	margin-bottom: -2px;
+}
+.files_footer div {
+	display: inline;
+	float: left;	
+	font-size: 11px;
+	margin-top: 7px;
+	color: rgb(118,118,118);
+}
+.files_date, .files_author, .files_downloads {
+	margin-left: 28px;
+}
+.like_button, .like_button_white {
+	text-transform: uppercase;
+	font-size: 9px;
+	background: url('http://www.cadsoftusa.com/downloads/app/webroot/img/like_btn_bg.jpg') repeat-x;
+	padding: 4px 15px;
+	color: rgb(97,97,97);
+	border: 1px solid rgb(207,207,207);
+	margin-left: 9px;
+	margin-top: 2px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	cursor: pointer;
+	float: left;
+	position: relative;
+	z-index: 2;
+	behavior:url('/app/webroot/css/border-radius.htc');	
+}
+.like_button_white {
+	background: #FFFFFF;
+	border: 0;
+	margin: 25% 0 15px 23%;
+	padding: 4px 20px;
+}
+.edit-picture {
+	width: 220px;
+	height: 200px;
+	margin-top: 10px;
+}
+.edit-picture img {
+	float: left;
+}
+.green-like {
+	float: left;   
+    min-height: 95px;
+    overflow: auto;
+    text-align: center;
+    width: 117px;
+}
+.user-info {
+	float: right;
+	width: 465px;
+	background: url('http://www.cadsoftusa.com/downloads/app/webroot/img/ULP_list_bg.jpg') repeat-x rgb(237,237,237);
+	border: 1px solid rgb(202,202,202);
+	padding: 5px 10px;
+	min-height: 127px;
+}
+.left-block {
+	float: left;
+	width: 278px;
+	min-height: 180px;
+	background: url('http://www.cadsoftusa.com/downloads/app/webroot/img/ULP_list_bg.jpg') repeat-x rgb(237,237,237);
+	border: 1px solid rgb(202,202,202);
+	padding: 5px 10px;
+}
+.right-block {
+	float: right;
+	width: 278px;
+	min-height: 180px;
+	background: url('http://www.cadsoftusa.com/downloads/app/webroot/img/ULP_list_bg.jpg') repeat-x rgb(237,237,237);
+	border: 1px solid rgb(202,202,202);
+	padding: 5px 10px;	
+}
+.profile-row {
+	margin-top: 15px;
+}
+.profile-row ul {
+	margin: 0 !important; 
+	font-size: 12px;
+	list-style-image: url('http://www.cadsoftusa.com/downloads/app/webroot/img/list_bullet.jpg') !important;
+}
+.profile-row ul li {
+	 
+}
+.rows {
+	font-size: 12px;
+}
+.rows div {
+	width: 100px;
+	display: inline-block;
+	margin-bottom: 7px;
+}
+.sidebar-item {		
+	background: #F2F2F2;	
+    width: 177px;
+	float: left;
+	min-height: 100px;
+	padding: 14px 26px 15px;
+	border-bottom: 1px solid #ADADAD;
+	margin-bottom: 10px;	
+}
+.sidebar-item h2 {
+	color: #D63212;
+    padding-bottom: 8px;
+	font-size: 14px;
+}
+.sidebar-item hr {
+	color: rgb(184,184,184);
+	background: rgb(184,184,184);
+	border: 0;
+	height: 1px;
+	margin-bottom: 8px;
+}
+.sidebar-item b {
+	font-size: 14px;	
+}
+.sidebar-item a:link, .sidebar-item a:visited, .sidebar-item a:active {
+	color: #D63212;
+    text-decoration: none;
+}
+.sidebar-item a:hover {
+	text-decoration: underline;
+}
+#sidebar123 {
+	float: left;
+    min-height: 200px;
+    width: 229px;
+}
+.error-message {
+	color: red;
+	font-weight: bold;
+}
+table td {
+	width: 100px;
+	border: 1px solid black;
+	margin: 2px;
+	text-align: center;
+	font-size: 11px;
+	padding: 3px;
+}
+#dateofbirthDay, #dateofbirthMonth, #dateofbirthYear {
+	width: 100px;
+}
+.paginate_disabled_previous {
+	background: url('/downloads/app/webroot/img/larr_disabled.png');
+	height: 23px;    
+    width: 30px;
+	display: inline-block;	
+}
+.paginate_enabled_previous {
+	background: url('/downloads/app/webroot/img/larr_enabled.png');
+	height: 23px;    
+    width: 30px;
+	display: inline-block;
+	cursor: pointer;
+}
+.paginate_disabled_next {
+	background: url('/downloads/app/webroot/img/rarr_disabled.png');
+	height: 23px;    
+    width: 30px;
+	display: inline-block;	
+}
+.paginate_enabled_next {
+	background: url('/downloads/app/webroot/img/rarr_enabled.png');
+	height: 23px;    
+    width: 30px;
+	display: inline-block;
+	cursor: pointer;
+}
+.dataTables_info {
+	display: inline;
+	font-weight: bold;
+}
+.dataTables_paginate {
+	display: inline;
+	float: right;
+}
+#tableToSort_wrapper select, input {
+	margin-bottom: 7px;
+}
+table thead td {
+	cursor: pointer;
+	font-weight: bold;
+}
+.checkbox label {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#bottom-menu #text-3 { display:none; }
+
+/* Social Media Bar */
+#socialmediabar { width:49px; padding:0px 10px 0px 0px; position:fixed; right:0; top:130px; z-index:999; }
+#socialmediabar ul { list-style:none; }

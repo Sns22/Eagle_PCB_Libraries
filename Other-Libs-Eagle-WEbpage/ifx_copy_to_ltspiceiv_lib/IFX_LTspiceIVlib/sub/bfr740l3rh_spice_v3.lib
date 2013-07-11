@@ -1,0 +1,101 @@
+﻿***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFR740L3RH	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 3.0	May	2012							
+*
+* 	Harald Boehm
+***************************************************************
+* - Please use the global SPICE parameter TEMP to set the junction 
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+Pdc*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 320 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note -Thermal Resistance Calculation- AN077. 
+* - The model has been verified in the junction temperature range 
+*   -25°C to +125°C. 
+* - TNOM=25 °C is the nominal ambient temperature. 
+*   Please do not change this value. 
+***************************************************************                 
+*BFR740L3RH C B E
+.SUBCKT BFR740L3RH 1 2 3
+
+
+CBEPAR 22 33 1.172E-014
+CBCPAR 22 11 4.305E-014
+CCEPAR 11 33 1.735E-013
+
+LB    222 20 4E-010
+LC    111 10  4E-010
+RBs   222 22 0.001
+RCs   111 11 0.001
+
+CBEPCK 20 30  3E-014
+CBCPCK 20 10  1.033E-014
+CCEPCK 10 30  1E-013
+LBX    20 2 1E-010
+LEX   30 3 1E-011
+LCX   10 1  5E-011
+RSUB 30 4 0.19
+RSUBNPN 44 4 578
+Rpsinker 4 33 0.16
+
+Q1 11 22 33 44 M_BFR740L3RH
+
+K LB LC 0.1
+
+
+
+.MODEL 	M_BFR740L3RH	NPN(										
++	IS	=	1.362E-015									
++	BF	=	632									
++	NF	=	1.027									
++	VAF	=	120									
++	IKF	=	0.09421									
++	ISE	=	1.4E-013									
++	NE	=	2.6									
++	BR	=	100		
++	NR	=	1		
++	VAR	=	1.7	
++	IKR	=	0.0035		
++	ISC	=	5E-015		
++	NC	=	2		
++	RB	=	2		
++	IRB	=	0.000889		
++	RBM	=	0.6	
++	RE	=	0.1019		
++	RC	=	5.14	
++	XTB	=	-2.482		
++	EG	=	1.034		
++	XTI	=	0.808		
++	CJE	=	3.14E-013		
++	VJE	=	0.8119		
++	MJE	=	0.1431		
++	TF	=	1.667E-012		
++	XTF	=	200		
++	VTF	=	0.3493		
++	ITF	=	0.3		
++	PTF	=	1		
++	CJC	=	8.419E-014		
++	VJC	=	0.4412		
++	MJC	=	0.3364		
++	XCJC	=	0.6466		
++	TR	=	2.786E-008
++	CJS	=	2.229E-013		
++	MJS	=	0.2684
++   VJS =   0.4393 		
++	FC	=	0.8156		
++	KF	=	2.56E-011		
++	AF	=	1.798)
+***************************************************************					
+					
+
+.ENDS BFR740L3RH

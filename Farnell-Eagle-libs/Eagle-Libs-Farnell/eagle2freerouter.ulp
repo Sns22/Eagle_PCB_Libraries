@@ -1,0 +1,197 @@
+	
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="robots" content="noindex" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="icon" href="/app/webroot/img/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.cadsoft.de/wp-content/themes/cadsoft/favicon.ico" type="image/x-icon" />
+<title></title>
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.cadsoft.de/wp-content/themes/cadsoft/css/prettyPhoto.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/wp-content/themes/cadsoft/css/libs/jquery.ui-1.8.10.css" />
+<link rel="pingback" href="http://www.cadsoftusa.com/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Feed" href="http://www.cadsoftusa.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; Comments Feed" href="http://www.cadsoftusa.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title=" &raquo; User Language Programs (ULPs) Comments Feed" href="/ulpsfeed/" />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.cadsoft.de/wp-content/plugins/contact-form-7/styles.css?ver=2.4.5' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.cadsoftusa.com/wp-includes/js/l10n.js?ver=20101110'></script>
+<link rel='index' title='' href='http://www.cadsoftusa.com/' />
+<meta name="description" content="" />
+<link rel="stylesheet" href="http://www.cadsoft.de/wp-content/plugins/wordpress-popular-posts/style/wpp.css" type="text/css" media="screen" /> 
+<link rel="stylesheet" href="/downloads/app/webroot/css/cs_dl_module.css" type="text/css" media="screen" /> 
+
+<script type="text/javascript" src="/wp-content/themes/cadsoft/js/libs/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="/wp-content/themes/cadsoft/js/libs/jquery.ui-1.8.13.min.js"></script>
+<script type="text/javascript" src="/downloads/app/webroot/js/cs_dl_module.js"></script>
+<script type="text/javascript" src="http://www.cadsoft.de/wp-content/themes/cadsoft/js/script.js"></script>
+<script type="text/javascript" src="http://www.cadsoft.de/wp-content/themes/cadsoft/js/jquery.prettyPhoto.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.cadsoft.de/wp-content/themes/cadsoft/js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="http://www.cadsoft.de/downloads/app/webroot/js/jquery.fileinput.js"></script>
+<script type="text/javascript" src="http://www.cadsoft.de/downloads/app/webroot/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+
+function uadetect(ua,ver,verm){ua=ua||null;ver=ver||null;verm=verm||"eq";n={ua:null,ver:null};
+switch(true){case /Firefox[\/\s](\d+\.\d+)/.test(navigator.userAgent):n.b="firefox";n.v=new Number(RegExp.$1)
+break;case /MSIE (\d+\.\d+);/.test(navigator.userAgent):n.b="msie";n.v=new Number(RegExp.$1);break;
+case /Opera[\/\s](\d+\.\d+)/.test(navigator.userAgent):n.b="opera";n.v=new Number(RegExp.$1);break;      
+default:n.b="n/a";n.v=0;}if(ua===null)return n;if(ua!==n.b)return false;if(ver===null)return ua == n.b;
+switch(verm){case "eq":return ver==n.v;case "ne":return ver!=n.v;case "gt":return ver<n.v;case "ge":return
+ver<=n.v;case "lt":return ver>n.v;case "le":return ver>=n.v;default:throw new Error("(eq,ne,gt,ge,tl,le)ne_verm");}}
+
+    $(window).load(function() {
+    try {
+	    $('#slider').nivoSlider({
+	      effect:'fade', // Specify sets like: 'fold,fade,sliceDown'
+			  animSpeed:400, // Slide transition speed
+			  manualAdvance:true,
+        });
+		
+				
+    } catch (e) { };
+	});
+  
+  /* Little Opera Patch ONLY For Windows Systems /
+  /  DIV do not want's to resize under iframe element */
+  if ( window.opera ) {
+    $(document).ready(function(){
+      try {
+        $("div > iframe").each(function(index, item) {
+          $(item).parent().height($(item).height()+30);    
+        });
+      } catch (e) {};
+    });
+  }
+  </script><!--<script type="text/javascript" src="/wp-content/themes/cadsoft/js/jquery.quicksearch.js"></script>--><script type="text/javascript">
+  /*
+$(document).ready(function(){
+	$('.quick-search-input-box input#id_search').quicksearch('.cadsoft-iframe-box table tbody tr');
+});
+*/
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('ol').css('list-style-type','decimal');
+});
+</script>
+<script type="text/javascript">
+function disableEnterKey(e) {
+	var key;
+	if(window.event) key = window.event.keyCode;
+	else key = e.which;
+	if(key == 13) return false;
+	else return true;
+}
+</script></head>
+<body class="page page-id-783 page-child parent-pageid-35 page-template page-template-default"> 
+<input type="hidden" id="language" value="en"><div id="feedback">
+<a href="" title="Feedback" class="feedback"></a><div><div class="wpcf7" id="wpcf7-f2-p783-o1"><form action="/downloads/user-language-programs/?language=en#wpcf7-f2-p783-o1" method="post" class="wpcf7-form"><div style="display: none;"> <input type="hidden" name="_wpcf7" value="2" /> <input type="hidden" name="_wpcf7_version" value="2.4.5" /> <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f2-p783-o1" /></div><p>Your Name (required)<br /> <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" class="wpcf7-text wpcf7-validates-as-required" size="40" /></span></p><p>Your Email (required)<br /> <span class="wpcf7-form-control-wrap your-email"><input type="text" name="your-email" value="" class="wpcf7-text wpcf7-validates-as-email wpcf7-validates-as-required" size="40" /></span></p><p>Your Message<br /> <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10"></textarea></span></p><p><input type="submit" value="Send" class="wpcf7-submit" /><img class="ajax-loader" style="visibility: hidden;" alt="Sending ..." src="http://www.cadsoft.de/wp-content/plugins/contact-form-7/images/ajax-loader.gif" /></p><div class="wpcf7-response-output wpcf7-display-none"></div></form></div></div> <a href="" title="Close" class="close"></a></div><div id="header"><div class="inner-container"><div id="logo"> <a href="http://www.cadsoftusa.com/" title="CadSoft"><img alt="" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/images/logo.png"></a></div> <img alt="" id="menu-active-bg" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/images/menu-bg.png">
+	<div class="menu-top-menu-container">
+		<ul id="menu-top-menu" class="menu">
+							<li id="menu-item-1071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1071"><a href="http://www.cadsoftusa.com/">Home</a></li><li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/">EAGLE PCB Software</a><ul class="sub-menu"><li id="menu-item-766" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/product-overview/">EAGLE PCB Software</a></li><li id="menu-item-767" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-767"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/schaltplan-editor/">Schematic Editor</a></li><li id="menu-item-769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/autorouter/">Autorouter</a></li><li id="menu-item-768" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-768"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/layout-editor/">Layout Editor</a></li><li id="menu-item-770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-770"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/guided-tour/">Guided Tour</a></li><li id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/new-in-v5/">New in V5</a></li><li id="menu-item-4348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4348"><a href="http://www.cadsoftusa.com/eagle-pcb-design-software/new-in-v6/">New in V6</a></li></ul></li><li id="menu-item-2562" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2562"><a href="http://www.cadsoftusa.com/training/">Training</a><ul class="sub-menu"><li id="menu-item-676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-676"><a href="http://www.cadsoftusa.com/training/tutorials/">Tutorials</a></li><li id="menu-item-677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-677"><a href="http://www.cadsoftusa.com/training/webinars/">Webinars</a></li><li id="menu-item-678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-678"><a href="http://www.cadsoftusa.com/training/videos/">Videos</a></li><li id="menu-item-674" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a href="http://www.cadsoftusa.com/training/manuals/">Manuals</a></li><li id="menu-item-675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-675"><a href="http://www.cadsoftusa.com/training/release-notes/">Release Notes</a></li><li id="menu-item-617" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-617"><a href="http://www.cadsoftusa.com/training/books/">Books</a></li><li id="menu-item-3424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3424"><a href="http://www.cadsoftusa.com/training/training-partners/">Training Partners</a></li><li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586"><a href="http://www.cadsoftusa.com/training/faq/">FAQ</a></li></ul></li><li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-37"><a href="http://www.cadsoftusa.com/download-eagle/">Downloads</a><ul class="sub-menu"><li id="menu-item-3669" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-3669"><a href="http://www.cadsoftusa.com/download-eagle/">Download EAGLE</a></li><li id="menu-item-798" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-798"><a href="http://www.cadsoftusa.com/download-eagle/addendum/">Addendum</a></li><li id="menu-item-802" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-802"><a href="/downloads/libraries">Libraries</a></li><li id="menu-item-801" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-801"><a href="/downloads/ulps">User Language Programs (ULPs)</a></li><li id="menu-item-799" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-799"><a href="/downloads/PCB-Projects">PCB Projects</a></li><li id="menu-item-797" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-797"><a href="/downloads/documentation">Documentation</a></li><li id="menu-item-3519" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-3519"><a href="/downloads/tools-and-converters">Tools and Converters</a></li><li id="menu-item-803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-803"><a href="http://www.cadsoftusa.com/download-eagle/freeware/">Freeware</a></li><li id="menu-item-796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796"><a href="/downloads/upload">User Uploads</a></li><li id="menu-item-3811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3811"><a href="http://www.cadsoftusa.com/betatest/">Betatest</a></li></ul></li><li id="menu-item-927" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-927"><a href="http://www.cadsoftusa.com/forums/">Forums</a><ul class="sub-menu"><li id="menu-item-3225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3225"><a href="http://www.cadsoftusa.com/forums/guidelines/">Guidelines</a></li><li id="menu-item-926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-926"><a href="http://www.cadsoftusa.com/forums/technical-support/">Technical Support</a></li><li id="menu-item-925" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.cadsoftusa.com/forums/user-chat/">User Chat</a></li><li id="menu-item-924" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-924"><a href="http://www.cadsoftusa.com/forums/suggestions/">Suggestions</a></li></ul></li><li id="menu-item-2563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2563"><a href="http://www.cadsoftusa.com/services/">Services</a><ul class="sub-menu"><li id="menu-item-650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-650"><a href="http://www.cadsoftusa.com/services/support/">Support</a></li><li id="menu-item-649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-649"><a href="http://www.cadsoftusa.com/services/designlink/">DesignLink</a></li><li id="menu-item-648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-648"><a href="http://www.cadsoftusa.com/services/pcb-services/">PCB Services</a></li><li id="menu-item-815" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-815"><a href="http://www.cadsoftusa.com/services/simulation/">Simulation</a></li><li id="menu-item-4121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4121"><a href="http://www.cadsoftusa.com/services/3d-visualization/">3D Visualization</a></li><li id="menu-item-814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-814"><a href="http://www.cadsoftusa.com/services/board-houses/">Board Houses</a></li><li id="menu-item-3407" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3407"><a href="http://www.cadsoftusa.com/mikrosps/">MikroSPS</a></li><li id="menu-item-813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-813"><a href="http://www.cadsoftusa.com/services/additional-links/">Additional Links</a></li></ul></li><!--<li id="menu-item-2996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2996"><a href="http://www.cadsoftusa.com/events/">Events</a><ul class="sub-menu"><li id="menu-item-3678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3678"><a href="http://www.cadsoftusa.com/events/">Events</a></li><li id="menu-item-3150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3150"><a href="http://www.cadsoftusa.com/training/webinars/">Webinars</a></li></ul></li>--><li id="menu-item-3160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3160"><a href="https://www.cadsoft.de/buy-eagle">Shop</a><ul class="sub-menu"><li id="menu-item-3722" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3722"><a href="https://www.cadsoft.de/buy-eagle">Buy EAGLE</a></li><li id="menu-item-4178" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4178"><a href="https://www.cadsoft.de/buy-eagle/upgrade/">Upgrade EAGLE</a></li><li id="menu-item-3329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3329"><a href="http://www.cadsoftusa.com/shop/pricing/">Pricing</a></li><li id="menu-item-839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-839"><a href="http://www.cadsoftusa.com/shop/eagle-hobbyist-and-education/">EAGLE Hobbyist and Education</a></li><li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="http://www.cadsoftusa.com/shop/authorised-resellers/">Authorised Resellers</a></li></ul></li><li id="menu-item-1144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1144"><a href="http://www.cadsoftusa.com/contact/">Contact Us</a><ul class="sub-menu"><li id="menu-item-845" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-845"><a href="http://www.cadsoftusa.com/contact/links/">Links</a></li><li id="menu-item-3727" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3727"><a href="http://www.cadsoftusa.com/contact/">Contact Us</a></li><li id="menu-item-4575" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4575"><a href="http://www.cadsoftusa.com/career/">Career</a></li></ul></li>
+					</ul>
+	</div>		
+</div>
+<div id="qtranslate">
+	<ul>
+		<li id="qtranslate-3" class="widget-container widget_qtranslate">
+			<ul class="qtrans_language_chooser" id="qtranslate-3-chooser">
+							<li class="active"><a href="http://www.cadsoftusa.com/downloads/?language=eng" class="qtrans_flag_en qtrans_flag_and_text" title="English"><span>Eng</span></a></li>
+				<li><a href="http://www.cadsoft.de/downloads/?language=ger" class="qtrans_flag_de qtrans_flag_and_text" title="Deutsch"><span>Ger</span></a></li>
+				<li><a href="http://www.cadsoftusa.com/downloads/?language=cn" class="qtrans_flag_cn qtrans_flag_and_text" title="中文"><span>中文</span></a></li>
+						</ul>
+			<div class="qtrans_widget_end"></div>
+		</li>
+	</ul>
+</div></div><div id="main"><div id="wrapper"><div>
+<!--<div id="qtranslate"><ul><li id="qtranslate-3" class="widget-container widget_qtranslate"><ul class="qtrans_language_chooser" id="qtranslate-3-chooser"><li class="active"><a href="/?language=eng" class="qtrans_flag_en qtrans_flag_and_text" title="English"><span>Eng</span></a></li><li><a href="/?language=ger" class="qtrans_flag_de qtrans_flag_and_text" title="Deutsch"><span>Ger</span></a></li><li><a href="/?language=cn" class="qtrans_flag_cn qtrans_flag_and_text" title="中文"><span>中文</span></a></li></ul><div class="qtrans_widget_end"></div></li></ul></div></div><div id="main"><div id="wrapper"><div>-->
+<div id="sidebar123">
+<div id="sidebar" class="page">
+	<h2>
+		Related Pages					</h2>
+		<div class="menu-top-menu-container">
+			<ul id="menu-top-menu-1" class="menu">
+				
+				<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-37"><a href="http://www.cadsoftusa.com/downloads/">Downloads</a>
+					<ul class="sub-menu">
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3669"><a href="http://www.cadsoftusa.com/download-eagle/">Download EAGLE</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-798"><a href="http://www.cadsoftusa.com/download-eagle/addendum/">Addendum</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-802"><a href="/downloads/libraries">Libraries</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page page-item-783  menu-item-801"><a href="/downloads/ulps">User Language Programs (ULPs)</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799"><a href="/downloads/PCB-Projects">PCB Projects</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-797"><a href="/downloads/documentation">Documentation</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3519"><a href="/downloads/tools-and-converters">Tools and Converters</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3519x"><a href="/downloads/microsps">MicroSPS</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-803"><a href="http://www.cadsoftusa.com/download-eagle/freeware/">Freeware</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796"><a href="/downloads/upload">User Uploads</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3811"><a href="http://www.cadsoftusa.com/betatest/">Betatest</a></li>
+					</ul>
+				</li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-927"><a href="http://www.cadsoftusa.com/forums/">Forums</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3225"><a href="http://www.cadsoftusa.com/forums/guidelines/">Guidelines</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-926"><a href="http://www.cadsoftusa.com/forums/technical-support/">Technical Support</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-925"><a href="http://www.cadsoftusa.com/forums/user-chat/">User Chat</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-924"><a href="http://www.cadsoftusa.com/forums/suggestions/">Suggestions</a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2563"><a href="http://www.cadsoftusa.com/services/">Services</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-650"><a href="http://www.cadsoftusa.com/services/support/">Support</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-649"><a href="http://www.cadsoftusa.com/services/designlink/">DesignLink</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-648"><a href="http://www.cadsoftusa.com/services/pcb-services/">PCB Services</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-815"><a href="http://www.cadsoftusa.com/services/simulation/">Simulation</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4121"><a href="http://www.cadsoftusa.com/services/3d-visualization/">3D Visualization</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-814"><a href="http://www.cadsoftusa.com/services/board-houses/">Board Houses</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3407"><a href="http://www.cadsoftusa.com/mikrosps/">MikroSPS</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-813"><a href="http://www.cadsoftusa.com/services/additional-links/">Additional Links</a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2996"><a href="http://www.cadsoftusa.com/events/">Events</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3678"><a href="http://www.cadsoftusa.com/events/">Events</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3150"><a href="http://www.cadsoftusa.com/training/webinars/">Webinars</a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3160"><a href="https://www.cadsoft.de/buy-eagle">Shop</a><ul class="sub-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3722"><a href="https://www.cadsoft.de/buy-eagle">Buy EAGLE</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4178"><a href="https://www.cadsoft.de/buy-eagle/upgrade/">Upgrade EAGLE</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3329"><a href="http://www.cadsoftusa.com/shop/pricing/">Pricing</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-839"><a href="http://www.cadsoftusa.com/shop/eagle-hobbyist-and-education/">EAGLE Hobbyist and Education</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="http://www.cadsoftusa.com/shop/authorised-resellers/">Authorised Resellers</a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1144"><a href="http://www.cadsoftusa.com/contact/">Contact Us</a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-845"><a href="http://www.cadsoftusa.com/contact/links/">Links</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3727"><a href="http://www.cadsoftusa.com/contact/">Contact Us</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4575"><a href="http://www.cadsoftusa.com/career/">Career</a></li></ul></li></ul></div><ul class="xoxo"></ul><div id="sidebar-content"></div><div class="quick-search-input-box"></div>
+
+</div>
+	<div class="sidebar-item" style="margin-top:-10px; text-align: center; height: 29px;">
+		<input type="button" style="float: none;" value="download" class="button" onclick="location.href='/downloads/download/1012210136'" /><br />
+		<div style="font-size: 12px; margin: 5px 0 8px;"><b>Downloads to date: 89</b><br /></div>
+		<div class="file_list_like_item" style="margin: auto; padding-top: 11px; height: 29px;">
+			<input type="button" style="margin-top: -2px;" value="like" class="like_button" onclick="likeTheFile('/downloads/like/',1012210136);" /><label id="1012210136">1</label>
+		</div>
+	</div>
+</div>
+<div id="content" class="page"><div id="heading">
+			Share your files with the EAGLE-Community	</div>
+<a href="/downloads/">Home</a><br /><br />
+<h1>eagle2freerouter.ulp</h1>
+<div class="profile-row">
+		[updated version 29-May-2013]
+Converter to use the Freerouter autorouter (www.freerouting.net), replacing the brd_to_dsn.ulp utility. Ability to set internal layer keepouts, protect wires, via's and polygons. Usage guide available in the Freerouting technical support forum.	<br />Uploaded on 04.06.2013	<br /><b>By <a href="/downloads/Elco">Elco</a></b>
+</div>
+<div style="clear: both;"></div>
+	<div class="profile-row">
+		<hr />
+		<h2>About Elco</h2>
+		Retired CEO IT company.	</div>
+	<div style="clear: both;"></div><br />
+<!--<div class="profile-row">
+	<div class="left-block">
+		<b></b><br />
+					<a href="/file/"></a><br />
+			
+	</div>
+	<div class="right-block">
+		<b></b><br />
+					<a href="/file/"></a><br />
+			
+	</div>
+</div>--></div></div>
+
+</div></div>
+	<div id="bottom-menu"><div class="inner-container">
+		<ul>
+			<li id="text-3" class="widget-container widget_text"><div class="textwidget"><li id="text-3-sub" class="widget-container widget_text"><h3 class="widget-title">About Us</h3><div class="textwidget"><ul><li><a href="/about-us/">About CadSoft</a></li><li><a href="/about-us/awards/">Awards</a></li><li><a href="/about-us/news/">News</a></li><li><a href="/about-us/sponsorships/">Sponsorships</a></li></ul></div></li><li id="text-4" class="widget-container widget_text"><h3 class="widget-title">Legal</h3><div class="textwidget"><ul><li><a href="/imprint/">Imprint</a></li><li><a href="/data-privacy-statement/">Data Privacy Statement</a></li><li><a href="/copyright/">Copyright</a></li></ul></div></li><li id="text-5" class="widget-container widget_text"><h3 class="widget-title">Support</h3><div class="textwidget"><ul><li><a href="/services/support/">Technical Support</a></li><li><a href="/training/tutorials/">Tutorials</a></li><li><a href="/training/webinars/">Webinars</a></li><li><a href="/forums/">Forums</a></li><li><a href="/sitemap/">Sitemap</a></li><li><a href="/contact/">Contact Us</a></li></ul></div></li><li id="text-6" class="widget-container widget_text"><h3 class="widget-title">Partners</h3><div class="textwidget"><ul><li><a href="http://www.farnell.com/" title="Farnell" target="_blank"><img alt="Farnell" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/images/banner1.png"></a></li><li><a href="http://www.newark.com/" title="Newark" target="_blank"><img alt="Newark" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/images/banner2.png"></a></li><li><a href="http://cn.element14.com/" title="" target="_blank"><img alt="" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/images/banner4.png"></a></li><li><a href="http://www.element14.com/" title="element14" target="_blank"><img alt="element14" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/images/banner3.png"></a></li></ul></div></li></div></li>
+		</ul>
+	</div>
+
+</div><div id="footer"><div class="inner-container"> <span>©2011 CadSoft. CadSoft Computer in the USA is a trading division of Newark Corporation, a Premier Farnell company</span></div></div>
+<script type="text/javascript" src="http://www.cadsoftusa.com/wp-content/themes/cadsoft/js/omniture/cadsoftusa/s_code.js"></script>
+<script type="text/javascript">
+            s.pageName="downloads:user-language-programs";
+            s.server="www.cadsoftusa.com";
+            s.channel="downloads";
+            s.pageType="";
+            var s_code=s.t();if(s_code)document.write(s_code)
+            </script><script type="text/javascript">if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')</script><noscript><img src="https://premierfarnell.112.2o7.net/b/ss/pfcadsoft-us/1/H.22.1--NS/0" height="1" width="1" alt="" style="border:0;" /></noscript><script type='text/javascript' src='http://www.cadsoft.de/wp-content/plugins/contact-form-7/jquery.form.js?ver=2.52'></script><script type='text/javascript' src='http://www.cadsoft.de/wp-content/plugins/contact-form-7/scripts.js?ver=2.4.5'></script>
+			<script type="text/javascript">
+            $(document).ready(function()
+            {
+                $("a[rel^='prettyPhoto']").prettyPhoto();
+            });
+        </script>
+	<div id="socialmediabar">
+        <ul>
+            <li><a href="http://www.youtube.com/user/EAGLECadSoftComputer" target="_blank"><img alt="YouTube" src="/wp-content/themes/cadsoft/images/socialmedia/youtube.png" /></a></li>
+            <li><a href="https://www.facebook.com/pages/CadSoft-Computer/211228982250406" target="_blank"><img alt="Facebook" src="/wp-content/themes/cadsoft/images/socialmedia/facebook.png" /></a></li>
+            <li><a href="https://twitter.com/CadSoftTech" target="_blank"><img alt="Twitter" src="/wp-content/themes/cadsoft/images/socialmedia/twitter.png" /></a></li>
+        </ul>
+    </div>
+</body>
+</html>

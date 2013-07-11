@@ -1,0 +1,135 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	12	GHZ							
+*	>>>	BFR840L3RHESD	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 2.0	JUN	2012								
+***************************************************************	
+* - Please use the global SPICE GP parameter TEMP to specify the junction
+*   temperature of the device in your application to get correct simulation results. 
+*   This procedure is necessary because the GP model does not consider the
+*   self heating of the device.
+* - TEMP is calculated by TEMP=TA+Pdc*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated DC power Pdc. 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 521 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature during measurement
+*   for the parameter extraction. Please do not change this value.
+****************************************************************		
+*BFR840L3RHESD C B E 
+.SUBCKT BFR840L3RHESD 1 2 3
+
+Rcx 15 1 1.57895
+Rbx 25 2 1.92983
+Rex 35 3 0.0800447
+
+CBEPAR 22 33 1.9449E-013
+CBCPAR 22 11 3.44161E-014
+CCEPAR 11 33 2.24848E-013
+LB    22 20 3.04259E-010
+LC   11 10  2.88058E-010
+CBEPCK 20 30  1E-014
+CBCPCK 20 10  1.5502E-014
+CCEPCK 10 30  1E-014
+LBX    20 25 9.04631E-011
+LEX   30 35 3.71422E-011
+LCX   10 15  9.15043E-011
+
+R_CS_npn 55 5 500
+
+D1 33 25 M_D1  
+D2 5 25  M_D2
+
+R_NBL_fdb 22 25 3.2
+R_PS 33 5 0.03
+RSUB 30 5 0.03
+
+D3 5 15 M_D3
+D4 23 33 M_D4
+D5 23 15 M_D5
+
+R_NBL_e11g 15 11 1.8
+
+Q1 11 22 33 55 M_BFR840L3RHESD
+
+.MODEL M_D1 D(
++ IS=3E-015	
++ N=1
++ RS=2.846
++ CJO=4E-014)
+
+.MODEL M_D2 D(
++ IS=3E-015	
++ N=1
++ RS=4170
++ CJO=4.5E-014)
+
+.MODEL M_D3 D(
++ IS=6.911E-016	
++ N=1.1
++ RS=1380
++ CJO =9.5E-014)
+
+.MODEL M_D4 D(
++ IS=3.5E-015	
++ N=1
++ RS=0.2
++ CJO =3E-014)
+
+.MODEL M_D5 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=4.7
++ CJO =3E-014)
+
+.MODEL 	M_BFR840L3RHESD	NPN(										
++	IS	=	2.429E-016									
++	BF	=	765.7									
++	NF	=	1.012									
++	VAF	=	375.1									
++	IKF	=	0.0819									
++	ISE	=	8.827E-014									
++	NE	=	2.8									
++	BR	=	194		
++	NR	=	0.998		
++	VAR	=	1.596	
++	IKR	=	0.015		
++	ISC	=	1.165E-015		
++	NC	=	2		
++	RB	=	7.53378		
++	IRB	=	0		
++	RBM	=	2.1	
++	RE	=	0.4405		
++	RC	=	7.246	
++	XTB	=	-2.276		
++	EG	=	1.11		
++	XTI	=	-1.233		
++	CJE	=	2.23E-014		
++	VJE	=	0.9214		
++	MJE	=	0.5		
++	TF	=	1.1E-012		
++	XTF	=	5.582		
++	VTF	=	0.6828		
++	ITF	=	0.4491		
++	PTF	=	0.0214		
++	CJC	=	6.6E-015		
++	VJC	=	0.7723		
++	MJC	=	1.005		
++	XCJC	=	0.4894		
++	TR	=	1E-010
++	CJS	=	1.147E-013		
++	MJS	=	1.108
++   VJS =   0.6112 
++	FC	=	0.578	
++	KF	=	1.65E-011	
++	AF	=	1.53)
+***************************************************************					
+
+.ENDS BFR840L3RHESD

@@ -1,0 +1,100 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	6         GHZ							
+*	>>>	BFP405	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 2.0	January	2012								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 555 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.	
+***************************************************************														
+*BFP405 C B E1 E2
+.SUBCKT BFP405 1 2 3 4
+
+CBEPAR 22 33 1.122E-013
+CBCPAR 22 11 4.514E-014
+CCEPAR 11 33 1.61E-014
+LB    22 20 6.485E-010
+LE   33 30 1.968E-010
+LC   11 10  6.833E-010
+CBEPCK 20 30  6.219E-014
+CBCPCK 20 10  7.843E-015
+CCEPCK 10 30  6.427E-014
+LBX    20 2 3.03E-010
+LEX   30 35 6.285E-011
+LCX   10 1  3.344E-010
+
+RSUB 55 30 39.31
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+
+Diode_sub 55 11 M_Diode_sub
+
+Q1 11 22 33 55 M_BFP405
+
+.MODEL M_Diode_sub D(
++	IS	=	2.266E-015				
++	N	=	1.02			
++	RS	=	60.11			
++	CJO	=	1E-014)			
+
+.MODEL 	M_BFP405  	NPN(										
++	IS	=	1.222E-017									
++	BF	=	146.8									
++	NF	=	0.9965									
++	VAF	=	45.14									
++	IKF	=	0.2141									
++	ISE	=	4.611E-015									
++	NE	=	2									
++	BR	=	14.57		
++	NR	=	1		
++	VAR	=	2.182	
++	IKR	=	0.01198		
++	ISC	=	1.456E-014		
++	NC	=	2		
++	RB	=	15.37		
++	IRB	=	0		
++	RBM	=	1.772	
++	RE	=	0.9902		
++	RC	=	3.012	
++	XTB	=	-0.1945		
++	EG	=	1.11		
++	XTI	=	5.65		
++	CJE	=	3.049E-013		
++	VJE	=	0.9695		
++	MJE	=	0.1352		
++	TF	=	4.857E-012		
++	XTF	=	13.32		
++	VTF	=	3.5		
++	ITF	=	0.3136		
++	PTF	=	9.485E-010		
++	CJC	=	3.378E-014		
++	VJC	=	0.6367		
++	MJC	=	0.4276		
++	XCJC	=	0.7499		
++	TR	=	0.0009978
++	CJS	=	2.2E-013		
++	MJS	=	0.2876			
++	VJS	=	0.6442 		
++	FC	=	0.5		
++	KF	=	7.1E-10		
++	AF	=	2.1)			
+***************************************************************					
+				
+.ENDS BFP405

@@ -1,0 +1,156 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFP842ESD	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 1.0	June	2012							
+*
+* 	Harald Boehm
+***************************************************************
+* - Please use the global SPICE parameter TEMP to set the junction 
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+Pdc*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 324 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note -Thermal Resistance Calculation- AN077. 
+* - The model has been verified in the junction temperature range 
+*   -25°C to +125°C. 
+* - TNOM=25 °C is the nominal ambient temperature. 
+*   Please do not change this value. 
+***************************************************************  
+*BFP842ESD C B E1 E2 only as a comment               
+.SUBCKT BFP842ESD 1 2 3 4
+
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+CBEPAR 22 33 2.863E-013
+CBCPAR 22 11 6.361E-014
+CCEPAR 11 33 5.95E-015
+LB    222 20 1.069E-010
+LE    333 30 2.904E-010
+LC    111 10 2.688E-010
+RBs   222 22 0.5
+REs   333 33 0.3
+RCs   111 11 0.5
+
+CE_PAD 33 50 6.447E-013
+
+CBEPCK 20 30  2.346E-013
+CBCPCK 20 10  7.752E-016
+CCEPCK 10 30  4.235E-013
+LBX    20 2 8.377E-010
+LEX   30 35 6.799E-011
+LCX   10 1  8.371E-010
+
+R_CS_npn 44 150 500
+
+D1 50 25 M_D1  
+D2 150 25  M_D2
+
+R_NBL_fbd 22 25 1
+RPS 50 150 0.76
+RSUB 30 150 0.001
+
+D3 150 15 M_D3
+D4 23 50 M_D4
+D5 23 15 M_D5
+
+R_NBL_e11g 15 11 1
+
+Q1 11 22 33 44 M_BFP842ESD
+
+.MODEL M_D1 D(
++ IS=3E-015	
++ N=0.9999
++ RS=2.846
++ M=0.5499
++ CJ0=1E-014
++ VJ=0.7
+
+.MODEL M_D2 D(
++ IS= 3E-015	
++ N=  0.9999
++ RS= 1208
++ CJ0=5E-015
++ M=  0.5499
++ VJ= 0.7)
+
+.MODEL M_D3 D(
++ IS=1E-015	
++ N=1.1
++ RS=4969
++ CJ0 =1E-014
++ M =0.4997
++ VJ=0.7001)
+
+.MODEL M_D4 D(
++ IS=3.5E-015	
++ N=0.9999
++ RS=0.2
++ CJ0 =1E-014
++ M =0.4999
++ VJ=0.7)
+
+.MODEL M_D5 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=4.7
++ CJ0 =1.2E-014
++ M =0.4999
++ VJ=0.7)
+
+
+
+.MODEL 	M_BFP842ESD	NPN(										
++	IS	=	5.847E-016									
++	BF	=	735									
++	NF	=	1.017									
++	VAF	=	200									
++	IKF	=	0.1311									
++	ISE	=	1.004E-013									
++	NE	=	2.466									
++	BR	=	119.7		
++	NR	=	1.01		
++	VAR	=	1.418	
++	IKR	=	0.006107		
++	ISC	=	1.203E-015		
++	NC	=	1.764		
++	RB	=	5.459		
++	IRB	=	0		
++	RBM	=	1.142	
++	RE	=	0.3		
++	RC	=	4.999	
++	XTB	=	-2.532		
++	EG	=	1.1		
++	XTI	=	-1.865		
++	CJE	=	1.67E-014		
++	VJE	=	0.5111		
++	MJE	=	0.5928		
++	TF	=	1.3E-012		
++	XTF	=	20		
++	VTF	=	1.248		
++	ITF	=	0.7412		
++	PTF	=	0.1867		
++	CJC	=	1.125E-014		
++	VJC	=	0.6509		
++	MJC	=	1.051		
++	XCJC	=	0.4894		
++	TR	=	1.099E-009
++	CJS	=	5.021E-013		
++	MJS	=	0.2447
++	VJS	=	0.6438 		
++	FC	=	0.5		
++	KF	=	6.4E-012		
++	AF	=	1.44)
+***************************************************************
+
+.ENDS BFP842ESD
+

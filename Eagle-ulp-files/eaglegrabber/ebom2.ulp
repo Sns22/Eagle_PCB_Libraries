@@ -1,0 +1,769 @@
+//ebom2.ulp
+//v0.7
+
+#require 5.0
+
+string version = "Created by ebom2.ulp v0.7\n\n";
+
+//Arrays to get the raw part information
+int NumParts;
+numeric string Lines[];
+numeric string PartName[], PartValue[], PartPackage[], PartDescription[];
+numeric string Manufacturer[],ManufacturerPartNumber[];
+numeric string Source[],SourcePartNumber[];
+numeric string ROHSCertificate[];
+numeric string Link[];
+
+
+//arrays to store data grouped by value
+numeric string LinePartName[], LinePartValue[], LinePartDevice[], LinePartPackage[], LinePartHeadline[], LinePartDescription[];
+numeric string LineManufacturer[],LineManufacturerPartNumber[];
+numeric string LineSource[],LineSourcePartNumber[];
+numeric string LineROHSCertificate[];
+numeric string LineLink[];
+numeric string LinePopulated[];
+numeric string LineClass[];
+int LineQty[];
+
+//arrays to store data group by ROHS Certificate
+numeric string ROHSLinePartName[], ROHSLinePartValue[], ROHSLinePartDescription[];
+numeric string ROHSLineManufacturer[],ROHSLineManufacturerPartNumber[];
+numeric string ROHSLineROHSCertificate[];
+
+
+
+//arrays to store data group by Source
+int NumUniqueSources;
+numeric string UniqueSource[];
+
+int NumUniqueROHSCertificates;
+numeric string UniqueROHSCertificate[];
+
+
+string Class[];
+string UniqueClass[];
+int NumUniqueClasses=0;
+
+
+
+int NumUniqueValues;
+int NumLines;
+string UniqueValues[];
+string UniqueSourcePartNumber[];
+
+
+string temp;
+
+string ExitCmd;
+
+//Variables used for the diaglogs
+int FullBOM=0;
+int AssemblyBOM=1;
+int OrderSheet=0;
+
+int ROHSBOM=0;
+
+int CLASSSort = 1;
+
+int openAfter = 1;
+
+
+
+void CollectPartData(void)
+{
+  NumParts = 0;
+  schematic(SCH) 
+  {
+    SCH.parts(P)
+	{
+      if (P.device.package)
+	
+        
+	if(P.attribute["POPULATED"] == "TRUE")
+	{
+			PartName[NumParts] = P.name;
+		    PartValue[NumParts] = P.value;
+		    PartPackage[NumParts] = P.device.package.name;
+		       
+		    PartDescription[NumParts] = P.attribute["DESCRIPTION"];   	
+			Manufacturer[NumParts] = P.attribute["MANUFACTURER"];
+			ManufacturerPartNumber[NumParts] = P.attribute["MANUFACTURERPARTNUMBER"];
+		    Source[NumParts]=P.attribute["SOURCE"];
+			SourcePartNumber[NumParts]=P.attribute["SOURCEPARTNUMBER"];
+			ROHSCertificate[NumParts]=P.attribute["ROHSCERTIFICATE"];
+			Link[NumParts] = P.attribute["LINK"];
+			Class[NumParts]=P.attribute["CLASS"];
+		        NumParts++;
+
+
+	  
+     }
+	}
+  }
+}
+
+
+void DetermineUniqueValues(void)
+{
+NumUniqueValues = 0;
+int MatchFound =0;
+
+//Scan through the list of parts and see which ones match the list of unique values
+
+    for (int i=0;i<NumParts;i++)
+	{
+
+		MatchFound = 0;
+		
+		//Check current value against our current list of unique values
+		for(int j=0;j<NumUniqueValues;j++)
+		{
+			if((SourcePartNumber[i] == UniqueSourcePartNumber[j]) && (PartValue[i] == UniqueValues[j]))
+			{
+			
+			//If there is a match, then stop looking, we areleady have this value in the list
+			 MatchFound = 1;
+
+			 break;
+			}
+			
+		}
+
+		if(MatchFound)
+		{
+		  	MatchFound =0;
+		}
+		else
+		{
+			//if no mathc found, add this current value to the list.
+			UniqueValues[NumUniqueValues] = PartValue[i];
+			UniqueSourcePartNumber[NumUniqueValues] = SourcePartNumber[i];
+			NumUniqueValues++;
+			MatchFound =0;
+		}
+
+	}
+
+	
+}
+
+
+void DetermineUniqueSources(void)
+{
+NumUniqueSources = 0;
+int MatchFound =0;
+
+//Scan through the list of parts and see which ones match the list of unique values
+
+    for (int i=0;i<NumParts;i++)
+	{
+
+		MatchFound = 0;
+		
+		//Check current value against our current list of unique values
+		for(int j=0;j<NumUniqueSources;j++)
+		{
+			if(Source[i] == UniqueSource[j])
+			{
+			
+			//If there is a match, then stop looking, we areleady have this value in the list
+			 MatchFound = 1;
+
+			 break;
+			}
+			
+		}
+
+		if(MatchFound)
+		{
+		  	MatchFound =0;
+		}
+		else
+		{
+			//if no mathc found, add this current value to the list.
+			UniqueSource[NumUniqueSources] = Source[i];
+			NumUniqueSources++;
+			MatchFound =0;
+		}
+
+	}
+
+}
+
+
+void DetermineUniqueClasses(void)
+{
+NumUniqueClasses = 0;
+int MatchFound =0;
+
+//Scan through the list of parts and see which ones match the list of unique values
+
+    for (int i=0;i<NumLines;i++)
+	{
+
+		MatchFound = 0;
+		
+		//Check current value against our current list of unique values
+		for(int j=0;j<NumUniqueClasses;j++)
+		{
+			if(LineClass[i] == UniqueClass[j])
+			{
+			
+			//If there is a match, then stop looking, we areleady have this value in the list
+			 MatchFound = 1;
+
+			 break;
+			}
+			
+		}
+
+		if(MatchFound)
+		{
+		  	MatchFound =0;
+		}
+		else
+		{
+			//if no mathc found, add this current value to the list.
+			UniqueClass[NumUniqueClasses] = LineClass[i];
+			NumUniqueClasses++;
+			MatchFound =0;
+		}
+
+	}
+
+		
+}
+
+
+
+void DetermineUniqueROHSCertificates(void)
+{
+NumUniqueROHSCertificates = 0;
+int MatchFound =0;
+
+//Scan through the list of parts and see which ones match the list of unique values
+
+    for (int i=0;i<NumParts;i++)
+	{
+
+		MatchFound = 0;
+		
+		//Check current value against our current list of unique values
+		for(int j=0;j<NumUniqueROHSCertificates;j++)
+		{
+			if(ROHSCertificate[i] == UniqueROHSCertificate[j])
+			{
+			
+			//If there is a match, then stop looking, we areleady have this value in the list
+			 MatchFound = 1;
+
+			 break;
+			}
+			
+		}
+
+		if(MatchFound)
+		{
+		  	MatchFound =0;
+		}
+		else
+		{
+			//if no mathc found, add this current value to the list.
+			UniqueROHSCertificate[NumUniqueROHSCertificates] =ROHSCertificate[i];
+			NumUniqueROHSCertificates++;
+			MatchFound =0;
+		}
+
+	}
+	
+	//sprintf(temp,"%d classes",NumUniqueClasses);
+	//dlgMessageBox(temp, "&Ok");
+}
+
+void ExtractBOMByUniqueValues(void)
+{
+
+//this function will build up the string arrays for the lines in the bom.  Each line
+//will correspond to a unique part 
+NumLines = NumUniqueValues;
+
+for(int i=0; i<NumUniqueValues; i++)
+{
+	for(int j=0;j<NumParts;j++)
+	{
+		//if the current part value is the same as the unique value, add it to the current line
+		
+		if((SourcePartNumber[j] == UniqueSourcePartNumber[i]) && (PartValue[j] == UniqueValues[i]))
+		{
+		
+				if(strlen(LinePartName[i]) == 0)
+				{
+					LinePartName[i] += PartName[j];
+					LineQty[i] = 1;
+				}
+				else
+				{
+					LinePartName[i] += ", " + PartName[j]; 
+					LineQty[i]++;
+				}
+
+				//In this implementation, all of thiese values should be equal for all parts of the same value,  just dump in the current one
+				//in the loop
+				LinePartValue[i]= PartValue[j];
+				LinePartPackage[i]= PartPackage[j];
+				LinePartDescription[i]= PartDescription[j];
+				LineManufacturer[i]= Manufacturer[j];
+				LineManufacturerPartNumber[i]=ManufacturerPartNumber[j];
+				LineSource[i]= Source[j];
+				LineSourcePartNumber[i]=SourcePartNumber[j];
+				LineROHSCertificate[i]=ROHSCertificate[j];
+				LineLink[i] = Link[j];
+				LineClass[i] = Class[j];
+		}
+	}
+}
+
+
+}
+
+
+
+void WriteStandardHTMLHeader()
+{
+printf("<HTML>						\n\n\n");
+printf("<STYLE>						\n\n\n");
+printf("								\n");
+printf("				\n");
+printf("				BODY\n");
+printf("				{\n");
+printf("				   font-size: 8pt;\n");
+printf("					background-color: #FFFFFF;\n");
+printf("					font-family: Arial, Verdana;\n");
+printf("				}\n");
+printf("				SELECT\n");
+printf("				{\n");
+printf("					font-size: 8pt;\n");
+printf("					color: black;\n");
+printf("					font-family: Arial, Verdana;\n");
+printf("				}\n");
+printf("				\n");
+printf("				P\n");
+printf("				{\n");
+printf("					font-size: 8pt;\n");
+printf("					color: black;\n");
+printf("					font-family:  Verdana,Arial, Tahoma,;\n");
+printf("				}\n");
+printf("				\n");
+printf("				TEXTAREA\n");
+printf("				{\n");
+printf("					FONT-SIZE: 8pt;\n");
+printf("				    COLOR: black;\n");
+printf("				    font-family: Arial, Verdana;\n");
+printf("				    border:1px solid;\n");
+printf("				}\n");
+printf("		TABLE\n");
+printf("			{\n");
+printf("			font-size: 8pt;\n");
+printf("			color: black;\n");
+printf("			font-family:  Verdana,Arial, Tahoma,;\n");
+printf("			border-width: 1px;\n");
+printf("			border-spacing: ;\n");
+printf("			border-style: solid;\n");
+printf("			border-color: black;\n");
+printf("			border-collapse: collapse;\n");
+printf("			background-color: white;\n");
+printf("			text-align: center;\n");
+printf("			}\n");	
+printf("		 TH \n");
+printf("			{\n");
+printf("			font-size: 8pt;\n");
+printf("			color: black;\n");
+printf("			font-family:  Verdana,Arial, Tahoma,;\n");
+printf("			border-width: 1px;\n");
+printf("			padding: 1px;\n");
+printf("			border-color: black;\n");
+printf("			background-color: white;\n");
+printf("			-moz-border-radius: ;\n");
+printf("			text-align: center;\n");
+printf("			}\n");
+printf("		TD\n");
+printf("			{\n");
+printf("			font-size: 8pt;\n");
+printf("			color: black;\n");
+printf("			font-family:  Verdana,Arial, Tahoma,;\n");
+printf("			border-width: 1px;\n");
+printf("			padding: 1px;\n");
+printf("			border-style: solid;\n");
+printf("			border-color: black;\n");
+printf("			background-color: white;\n");
+printf("			-moz-border-radius: ;\n");
+printf("			text-align: center;\n");
+printf("			}\n");
+printf("</STYLE>						\n\n\n");
+printf("	<BODY>						\n");
+printf("							\n");
+printf("							\n");
+}
+
+void WriteStandardHTMLFooter()
+{
+printf("	</BODY>						\n");
+printf("</HTML>						\n");
+
+}
+
+void OutputFullBOMToHTML(string FileOutput)
+{
+output(FileOutput)
+{
+	WriteStandardHTMLHeader();
+
+	printf("		<TABLE>						\n");
+
+	printf("			<TR>						\n");
+	printf("				<TD><b>Qty</b>	\n");
+	printf("				<TD><b>Designator(s)</b>	\n");
+	printf("				<TD><b>Value</b>	\n");
+	printf("				<TD><b>PCB Package</b>	\n");
+	printf("				<TD><b>Description</b>	\n");
+	printf("				<TD><b>Manufacturer</b>	\n");
+	printf("				<TD><b>Manufacturer Part Number</b>	\n");
+	printf("				<TD><b>Source</b>	\n");
+	printf("				<TD><b>Source Part Number</b>	\n");
+	printf("				<TD><b>ROHS Certificate</b>	\n");
+
+	for( int i=0;i<NumLines;i++)
+	{
+		printf("			<TR>						\n");
+		printf("				<TD>%d	\n",LineQty[i]);
+		printf("				<TD>%s	\n",LinePartName[i]);
+		printf("				<TD>%s	\n",LinePartValue[i]);
+		printf("				<TD>%s	\n",LinePartPackage[i]);
+		printf("				<TD>%s	\n",LinePartDescription[i]);
+		printf("				<TD>%s	\n",LineManufacturer[i]);
+		printf("				<TD>%s	\n",LineManufacturerPartNumber[i]);
+		printf("				<TD>%s	\n",LineSource[i]);
+		if(LineLink[i] == "UNKNOWN LINK")
+			printf("				<TD>%s	\n",LineSourcePartNumber[i]);
+		else
+			printf("				<TD><a href=\"%s\">%s</a>	\n", LineLink[i], LineSourcePartNumber[i]);
+		printf("				<TD>%s	\n",LineROHSCertificate[i]);
+					
+	}
+
+	
+
+printf("		</TABLE>			\n");
+
+printf(version);
+
+WriteStandardHTMLFooter();
+	
+}
+
+
+
+}
+
+
+void OutputROHSBOMToHTML(string FileOutput)
+{
+output(FileOutput)
+{
+	WriteStandardHTMLHeader();
+
+	printf("		<TABLE>						\n");
+
+	printf("			<TR>						\n");
+	printf("				<TD><b>Designator(s)</b>	\n");
+	printf("				<TD><b>Value</b>	\n");
+	printf("				<TD><b>Description</b>	\n");
+	printf("				<TD><b>Manufacturer</b>	\n");
+	printf("				<TD><b>Manufacturer Part Number</b>	\n");
+	
+	printf("				<TD><b>ROHS Certificate</b>	\n");
+
+	for( int i=0;i<NumUniqueROHSCertificates;i++)
+	{
+		printf("			<TR>						\n");
+		printf("				<TD>%s	\n",ROHSLinePartName[i]);
+		printf("				<TD>%s	\n",ROHSLinePartValue[i]);
+		printf("				<TD>%s	\n",ROHSLinePartDescription[i]);
+		printf("				<TD>%s	\n",ROHSLineManufacturer[i]);
+		printf("				<TD>%s	\n",ROHSLineManufacturerPartNumber[i]);
+		printf("				<TD>%s	\n",ROHSLineROHSCertificate[i]);
+					
+	}
+
+	
+
+printf("		</TABLE>			\n");
+
+printf(version);
+
+WriteStandardHTMLFooter();
+	
+}
+
+
+
+}
+
+
+
+void OutputOrderListToHTML(string FileOutput)
+{
+	output(FileOutput)
+	{
+		WriteStandardHTMLHeader();
+
+
+			for(int i=0;i<NumUniqueSources;i++)
+				{
+				printf("<b><H1>%s</H1></b>\n",UniqueSource[i]);
+			
+				
+				printf("		<TABLE>						\n");
+				printf("			<TR>						\n");
+				printf("				<TD><b>Qty</b>	\n");
+				printf("				<TD><b>Source Part Number</b>	\n");
+				printf("				<TD><b>Description</b>	\n");
+				printf("				<TD><b>Designator(s)</b>	\n");
+
+					for( int j=0;j<NumLines;j++)
+					{
+						if(LineSource[j] == UniqueSource[i])
+						{
+						printf("			<TR>						\n");
+						printf("				<TD>%d	\n",LineQty[j]);
+						if(LineLink[j] == "UNKNOWN LINK")
+							printf("				<TD>%s	\n",LineSourcePartNumber[j]);
+						else
+							printf("				<TD><a href=\"%s\">%s</a>	\n", LineLink[j], LineSourcePartNumber[j]);
+						printf("				<TD>%s	\n",LinePartDescription[j]);
+						printf("				<TD>%s	\n",LinePartName[j]);
+					
+						}
+									
+					}
+
+				printf("		</TABLE>			\n");
+				printf("		<br><br>			\n");
+				
+				
+				}
+	printf(version);
+	
+	WriteStandardHTMLFooter();
+
+	}
+}
+
+void OutputAssemblyBOMToHTML(string FileOutput)
+{
+	output(FileOutput)
+	{
+		WriteStandardHTMLHeader();
+
+
+		
+		if(CLASSSort)
+		{
+			for(int i=0;i<NumUniqueClasses;i++)
+				{
+				printf("<b><H1>%s</H1></b>\n",UniqueClass[i]);
+			
+				
+				printf("		<TABLE>						\n");
+				printf("			<TR>						\n");
+				printf("				<TD><b>Qty</b>	\n");
+				printf("				<TD><b>Designator(s)</b>	\n");
+				printf("				<TD><b>Source</b>	\n");
+				printf("				<TD><b>Source Part Number</b>	\n");
+				printf("				<TD><b>Description</b>	\n");
+				
+
+					for( int j=0;j<NumLines;j++)
+					{
+						if(LineClass[j] == UniqueClass[i])
+						{
+						printf("			<TR>						\n");
+						printf("				<TD>%d	\n",LineQty[j]);
+						printf("				<TD>%s	\n",LinePartName[j]);
+						printf("				<TD>%s	\n",LineSource[j]);
+						if(LineLink[j] == "UNKNOWN LINK")
+							printf("				<TD>%s	\n",LineSourcePartNumber[j]);
+						else
+							printf("				<TD><a href=\"%s\">%s</a>	\n", LineLink[j], LineSourcePartNumber[j]);
+						printf("				<TD>%s	\n",LinePartDescription[j]);
+						
+					
+						}
+									
+					}
+
+				printf("		</TABLE>			\n");
+				printf("		<br><br>			\n");
+				
+				
+				}
+		}
+		else
+		{
+				printf("		<TABLE>						\n");
+				printf("			<TR>						\n");
+				printf("				<TD><b>Designator(s)</b>	\n");
+				printf("				<TD><b>Qty</b>	\n");
+				printf("				<TD><b>Source</b>	\n");
+				printf("				<TD><b>Source Part Number</b>	\n");
+				printf("				<TD><b>Description</b>	\n");
+			
+
+					for( int j=0;j<NumLines;j++)
+					{
+						
+						printf("			<TR>						\n");
+						printf("				<TD>%d	\n",LineQty[j]);
+						printf("				<TD>%s	\n",LinePartName[j]);
+						printf("				<TD>%s	\n",LineSource[j]);
+						if(LineLink[j] == "UNKNOWN LINK")
+							printf("				<TD>%s	\n",LineSourcePartNumber[j]);
+						else
+							printf("				<TD><a href=\"%s\">%s</a>	\n", LineLink[j], LineSourcePartNumber[j]);
+						printf("				<TD>%s	\n",LinePartDescription[j]);
+					
+					
+						
+									
+					}
+
+				printf("		</TABLE>			\n");
+				printf("		<br><br>			\n");
+				
+				
+		
+		
+		}
+		
+	printf(version);
+	
+	WriteStandardHTMLFooter();
+
+	}
+}
+
+
+
+
+
+
+
+dlgDialog("Select BOM Type")
+{
+	dlgGroup("BOM Type")
+	{
+	dlgCheckBox("&Full BOM", FullBOM);
+	dlgCheckBox("&Order Sheet", OrderSheet);
+	dlgCheckBox("&Assembly BOM", AssemblyBOM);
+	//dlgCheckBox("&ROHS BOM", ROHSBOM);
+	
+	}
+	
+	dlgGroup("Options")
+	{
+	dlgCheckBox("&Sort Assembly Sheet by CLASS Attribute", CLASSSort);
+	dlgCheckBox("&Open BOM after completing", CLASSSort);
+	}
+	dlgPushButton("+Generate") 
+	dlgAccept();
+}; 
+
+string FileSave;
+
+CollectPartData();
+DetermineUniqueValues();
+ExtractBOMByUniqueValues();
+
+if(FullBOM)
+{
+//CollectPartData();
+//DetermineUniqueValues();
+//ExtractBOMByUniqueValues();
+schematic(SCH)
+{
+FileSave=dlgFileSave("HTML File to Save Full BOM To", filedir(SCH.name), "*.html");
+}
+OutputFullBOMToHTML(FileSave);
+if(openAfter)
+	{
+	string temp;
+	if(strstr(OS_SIGNATURE, "Mac") != -1)
+	  sprintf(temp, "open %s", FileSave);
+	if(strstr(OS_SIGNATURE, "Windows") != -1)
+	  sprintf(temp, "cmd.exe /c start %s", FileSave);
+	if(strstr(OS_SIGNATURE, "Linux") != -1)
+	  sprintf(temp, "gnome-open %s", FileSave);
+	system(temp);
+	}
+}
+
+if(OrderSheet) 
+{
+//CollectPartData();
+//DetermineUniqueValues();
+//ExtractBOMByUniqueValues();
+DetermineUniqueSources();
+schematic(SCH)
+{
+FileSave=dlgFileSave("HTML File to Save Order Sheet to", filedir(SCH.name), "*.html");
+}
+OutputOrderListToHTML(FileSave);
+if(openAfter)
+	{
+	string temp;
+	if(strstr(OS_SIGNATURE, "Mac") != -1)
+	  sprintf(temp, "open %s", FileSave);
+	if(strstr(OS_SIGNATURE, "Windows") != -1)
+	  sprintf(temp, "cmd.exe /c start %s", FileSave);
+	if(strstr(OS_SIGNATURE, "Linux") != -1)
+	  sprintf(temp, "gnome-open %s", FileSave);
+	system(temp);
+	}
+}
+
+if(ROHSBOM)
+{
+//CollectPartData();
+//DetermineUniqueValues();
+DetermineUniqueROHSCertificates();
+
+
+//FileSave=dlgFileSave("HTML File to Save ROHS BOM to ", "*.html");
+//OutputROHSBOMToHTML(FileSave);
+}
+
+if(AssemblyBOM)
+{
+//CollectPartData();
+//DetermineUniqueValues();
+//ExtractBOMByUniqueValues();
+DetermineUniqueClasses();
+schematic(SCH)
+{
+FileSave=dlgFileSave("HTML File to Save Assembly Sheet to", filedir(SCH.name), "*.html");
+}
+OutputAssemblyBOMToHTML(FileSave);
+if(openAfter)
+	{
+	string temp;
+	if(strstr(OS_SIGNATURE, "Mac") != -1)
+	  sprintf(temp, "open %s", FileSave);
+	if(strstr(OS_SIGNATURE, "Windows") != -1)
+	  sprintf(temp, "cmd.exe /c start %s", FileSave);
+	if(strstr(OS_SIGNATURE, "Linux") != -1)
+	  sprintf(temp, "gnome-open %s", FileSave);
+	system(temp);
+	}
+}
+
+

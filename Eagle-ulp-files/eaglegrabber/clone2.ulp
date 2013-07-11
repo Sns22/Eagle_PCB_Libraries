@@ -1,0 +1,122 @@
+//clone2.ulp
+//v0.3
+
+enum { FALSE,TRUE };
+enum { NOPE,YEP };
+
+if(argc != 2)
+{
+	dlgMessageBox("Usage is clone_attributes PART_NAME.  Ex.  clone_attributes R1", "&Ok");
+	exit(0);
+}
+
+string MasterPartName;
+int MasterPartNameFound;
+string MasterPartValue;
+string MasterPartPackage;
+string MasterAttributeNames [];
+string MasterAttributeValues [];
+
+int NumMasterAttributes;
+int NumClones;
+
+int currentSheet;
+
+MasterPartName = strupr(argv[1]);
+MasterPartNameFound = NOPE;
+NumMasterAttributes =0;
+
+string ScriptPath;
+
+//Check if we're on the schematic sheet
+if(schematic)
+{
+
+	//Get directory for the schematic we're working with
+	schematic(S)
+	{
+		ScriptPath = filedir(S.name);
+		
+		if (sheet)
+			sheet (sh)
+			{
+				currentSheet = sh.number;
+			}
+	}
+
+	//need to look for the partname given
+	schematic(SCH) 
+	{
+		SCH.parts(P) 
+		{
+			//if its found, get value, package, and all attributes
+			if (P.name == MasterPartName)
+			{
+				MasterPartNameFound = YEP;
+				MasterPartValue = P.value;
+				MasterPartPackage = P.device.package.name;
+				
+				P.attributes(A)
+				{
+					MasterAttributeNames[NumMasterAttributes] = A.name;
+					MasterAttributeValues[NumMasterAttributes] = A.value;
+					NumMasterAttributes++;
+				}
+			
+			}
+			
+		}
+	}
+
+	//if its not found through error and exit
+	if(MasterPartNameFound == NOPE)
+	{
+		string temp;
+		sprintf(temp,"%s not found!",MasterPartName);
+		dlgMessageBox(temp, "&Ok");
+		exit(0);
+	}
+
+	//go through all parts, if the value and package is the same, copy all attributes
+	NumClones = 0;
+	output(ScriptPath + "clone_attributes.scr")
+	{
+
+		schematic(SCH) 
+		{
+			SCH.sheets(S)
+			{
+				printf("EDIT .s%d;\n",S.number);
+				printf("CHANGE DISPLAY OFF;\n");
+				S.parts(P)
+				{
+					if(P.device.package)
+					{
+						if ((P.value == MasterPartValue) &&
+							(P.device.package.name == MasterPartPackage))
+						{
+							NumClones++;
+								
+							for(int i=0;i<NumMasterAttributes;i++)
+							{							
+								
+								printf("ATTRIBUTE %s %s '%s';\n",P.name,MasterAttributeNames[i],MasterAttributeValues[i]);
+								
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		printf("EDIT .s%d;\n",currentSheet);
+		
+	}
+
+	string temp;
+	sprintf(temp,"%d parts with %d attributes to be cloned.",NumClones,NumMasterAttributes);
+	dlgMessageBox(temp, "&Ok");
+
+	exit("Script '" + ScriptPath + "clone_attributes'");
+	
+}

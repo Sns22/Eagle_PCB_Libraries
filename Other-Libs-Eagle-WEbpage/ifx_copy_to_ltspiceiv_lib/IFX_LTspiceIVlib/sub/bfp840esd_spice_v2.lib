@@ -1,0 +1,134 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	12	GHZ							
+*	>>>	BFP840ESD	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 2.0	MAR	2012								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 551 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************		
+*BFP840ESD C B E1 E2 
+.SUBCKT BFP840ESD 1 2 3 4
+
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+CBEPAR 22 33 1.112E-013
+CBCPAR 22 11 2.935E-014
+CCEPAR 11 33 2.803E-013
+LB    22 20 7.403E-010
+LE   33 30 2.5E-010
+LC   11 10  6.756E-010
+CBEPCK 20 30  4E-014
+CBCPCK 20 10  1E-015
+CCEPCK 10 30  4E-014
+LBX    20 2 2E-010
+LEX   30 35 8.453E-011
+LCX   10 1  2E-010
+
+R_CS_npn 55 5 500
+
+D1 33 25 M_D1  
+D2 5 25  M_D2
+
+R_NBL_fdb 22 25 3.2
+R_PS 33 5 0.03
+RSUB 30 5 0.02
+
+D3 5 15 M_D3
+D4 23 33 M_D4
+D5 23 15 M_D5
+
+R_NBL_e11g 15 11 1.8
+
+Q1 11 22 33 55 M_BFP840ESD
+
+.MODEL M_D1 D(
++ IS=3E-015	
++ N=1
++ RS=2.846
++ CJO=4E-014)
+
+.MODEL M_D2 D(
++ IS=3E-015	
++ N=1
++ RS=4170
++ CJO=4.5E-014)
+
+.MODEL M_D3 D(
++ IS=6.911E-016	
++ N=1.1
++ RS=1380
++ CJO =9.5E-014)
+
+.MODEL M_D4 D(
++ IS=3.5E-015	
++ N=1
++ RS=0.2
++ CJO =3E-014)
+
+.MODEL M_D5 D(
++ IS=3.5E-015	
++ N=1.02
++ RS=4.7
++ CJO =3E-014)
+
+.MODEL 	M_BFP840ESD	NPN(										
++	IS	=	2.067E-016									
++	BF	=	964.2									
++	NF	=	1									
++	VAF	=	375.1									
++	IKF	=	0.1222									
++	ISE	=	3.144E-015									
++	NE	=	1.82									
++	BR	=	133.1		
++	NR	=	0.9915		
++	VAR	=	1.269	
++	IKR	=	0.05566		
++	ISC	=	1.165E-015		
++	NC	=	2		
++	RB	=	16.33		
++	IRB	=	0		
++	RBM	=	2.967	
++	RE	=	0.18		
++	RC	=	7.246	
++	XTB	=	-2.276		
++	EG	=	1.11		
++	XTI	=	0		
++	CJE	=	5.171E-014		
++	VJE	=	0.3736		
++	MJE	=	0.5112		
++	TF	=	1.21432E-012		
++	XTF	=	27.91		
++	VTF	=	0.344		
++	ITF	=	2.119		
++	PTF	=	0.0214		
++	CJC	=	2E-014		
++	VJC	=	0.8537		
++	MJC	=	0.6257		
++	XCJC	=	0.4894		
++	TR	=	1E-010
++	CJS	=	1.369E-013		
++	MJS	=	0.5946
++   VJS =   1.072 
++	FC	=	0.4403	
++	KF	=	6.38495E-012	
++	AF	=	1.43915)
+***************************************************************					
+
+.ENDS BFP840ESD

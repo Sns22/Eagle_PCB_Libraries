@@ -1,0 +1,87 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	6	GHZ							
+*	>>>	BFR460L3	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 2.0	January	2012								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 210 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************			
+*BFR460L3 C B E
+.SUBCKT BFR460L3 1 2 3
+
+CBEPAR 22 33 1.06627E-013
+CBCPAR 22 11 1.27188E-013
+CCEPAR 11 33 9.36829E-014
+LB    22 20 3.4943E-010
+LE   33 30 3.686E-010
+CBEPCK 20 30  3.27545E-014
+CBCPCK 20 11  1E-015
+CCEPCK 11 30  3.16153E-014
+LBX    20 2 8.51954E-011
+LEX   30 3 6.72914E-011
+LCX   11 1  4.60244E-011
+
+Q1 11 22 33  M_BFR460L3
+
+.MODEL 	M_BFR460L3	NPN(										
++	IS	=	1.20941E-016									
++	BF	=	180.203									
++	NF	=	1.00824									
++	VAF	=	37.95									
++	IKF	=	0.5364									
++	ISE	=	6.757E-014									
++	NE	=	2.312									
++	BR	=	12.1585		
++	NR	=	1.00877		
++	VAR	=	2.455	
++	IKR	=	0.0184068		
++	ISC	=	1.335E-015		
++	NC	=	1.5		
++	RB	=	4.24376		
++	IRB	=	0		
++	RBM	=	1.739	
++	RE	=	0.425491		
++	RC	=	2.885	
++	XTB	=	-2.2		
++	EG	=	1.11		
++	XTI	=	0.91		
++	CJE	=	3.967E-013		
++	VJE	=	0.4605		
++	MJE	=	0.4485		
++	TF	=	3.75298E-012		
++	XTF	=	8.34924		
++	VTF	=	2.10327		
++	ITF	=	0.278262		
++	PTF	=	0.1		
++	CJC	=	2.777E-013		
++	VJC	=	0.6477		
++	MJC	=	0.2943		
++	XCJC	=	0.7031		
++	TR	=	2.703E-006
++	CJS	=	0		
++	MJS	=	1
++   VJS	=  	1 		
++	FC	=	0.5		
++	KF	=	2.9E-13		
++	AF	=	1.4)			
+***************************************************************					
+					
+
+.ENDS BFR460L3

@@ -1,0 +1,10 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"10-01102010-085356";"";
+"TraceParts.ClassPath";"LEMO:/F_LEMO/10-01102010-085356";"";
+"TraceParts.InstanceId";"10-01102010-0853562ZZGU38C27T8LFMARZ52HSA90";"";
+"REFERENCE";"EPL.00.250.NTN";"";
+"DESIGN";"Elbow receptacle for printed circuit (IP 50)";"";
+"SUPPLIER";"LEMO";"";
+"TraceParts.PartStatus";"Published";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartVersion";"1.1.8";"";

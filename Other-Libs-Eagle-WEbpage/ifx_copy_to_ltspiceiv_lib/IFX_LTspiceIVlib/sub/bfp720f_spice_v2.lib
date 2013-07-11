@@ -1,0 +1,93 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	15	GHZ							
+*	>>>	BFP720F	<<<								
+*	(C)	2011	Infineon	Technologies	AG							
+*	Version	2.0	November	2011								
+***************************************************************	
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 410 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************												
+*BFP720F C B E1 E2
+.SUBCKT BFP720F 1 2 3 4
+
+CBEPAR 22 33 2.71521E-013
+CBCPAR 22 11 2.817E-014
+CCEPAR 11 33 1.27816E-013
+LB    22 20 6.52742E-010
+LE   33 30 4.25815E-011
+LC   11 10  4.64065E-010
+CBEPCK 20 30  3.036E-014
+CBCPCK 20 10  5.58948E-015
+CCEPCK 10 30  3.15E-014
+LBX    20 2 2.88086E-010
+LEX   30 35 2.64919E-011
+LCX   10 1  2.90785E-010
+
+RSub 55 30 0.3261
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+Q1 11 22 33 55 M_BFP720F
+
+
+.MODEL 	M_BFP720F	NPN(										
++	IS	=	7.669E-016									
++	BF	=	705.5									
++	NF	=	1.02									
++	VAF	=	120.2									
++	IKF	=	0.07337									
++	ISE	=	1.731E-014									
++	NE	=	2									
++	BR	=	89.78		
++	NR	=	0.98		
++	VAR	=	1.455	
++	IKR	=	0.1924		
++	ISC	=	3.85E-015		
++	NC	=	1.5		
++	RB	=	7.098		
++	IRB	=	0		
++	RBM	=	3.325	
++	RE	=	0.3681		
++	RC	=	9.713	
++	XTB	=	-2.346		
++	EG	=	1.014		
++	XTI	=	2.728		
++	CJE	=	4.03986E-014		
++	VJE	=	0.937437		
++	MJE	=	0.168885		
++	TF	=	2.2601E-012		
++	XTF	=	11.748		
++	VTF	=	10.6642		
++	ITF	=	1.04238		
++	PTF	=	0.001		
++	CJC	=	5.58554E-014		
++	VJC	=	1.2239		
++	MJC	=	0.999957		
++	XCJC	=	0.5328
++	TR	=	4.444E-010
++	CJS	=	1.834E-013		
++	MJS	=	0.06046
++	VJS	=	0.2366		
++	FC	=	0.252942		
++	KF	=	3.4E-12		
++	AF	=	1.5)			
+***************************************************************					
+					
+
+.ENDS BFP720F

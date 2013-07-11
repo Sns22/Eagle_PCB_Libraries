@@ -1,0 +1,91 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	15	GHZ							
+*	>>>	BFP650	<<<								
+*	(C)	2010	Infineon	Technologies	AG							
+*	Version 2.0	September	2010								
+***************************************************************		
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the temperature increment caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 140 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************		
+*BFP650 C B E1 E2 
+.SUBCKT BFP650 1 2 3 4
+
+CBEPAR 22 33 1.251E-012
+CBCPAR 22 11 2.098E-013
+CCEPAR 11 33 8.929E-014
+LB    22 20 6.42975E-010
+LE   33 30 2.00713E-010
+LC   11 10  7.19229E-010
+CBEPCK 20 30  8.352E-014
+CBCPCK 20 10  1.31927E-015
+CCEPCK 10 30  9.42707E-014
+LBX    20 2 3.95979E-010
+LEX   30 35 3.49243E-011
+LCX   10 1  2.37233E-010
+
+RSub 55 30 451.803
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+Q1 11 22 33 55 M_BFP650
+
+.MODEL 	M_BFP650  	NPN(										
++	IS	=	4.379E-015									
++	BF	=	546.3									
++	NF	=	1.02									
++	VAF	=	149.9									
++	IKF	=	0.1673									
++	ISE	=	5.486E-014									
++	NE	=	2									
++	BR	=	185.8		
++	NR	=	1		
++	VAR	=	1.816	
++	IKR	=	0.01136		
++	ISC	=	6.651E-015		
++	NC	=	1.5		
++	RB	=	6.376		
++	IRB	=	8.075E-005		
++	RBM	=	0.01719	
++	RE	=	0.294		
++	RC	=	2.354	
++	XTB	=	-2.56		
++	EG	=	1.103		
++	XTI	=	0		
++	CJE	=	2.187E-013		
++	VJE	=	1		
++	MJE	=	0.6662		
++	TF	=	1.45381E-012		
++	XTF	=	1		
++	VTF	=	0.164654		
++	ITF	=	0.940064		
++	PTF	=	17.5		
++	CJC	=	1.834E-013		
++	VJC	=	0.4096		
++	MJC	=	0.4691		
++	XCJC	=	0.5		
++	TR	=	1E-009
++	CJS	=	1.7E-013		
++	MJS	=	0.1192
++   VJS =   0.51 		
++	FC	=	0.2723		
++	KF	=	2.77E-011		
++	AF	=	1.92)			
+***************************************************************					
+				
+.ENDS BFP650

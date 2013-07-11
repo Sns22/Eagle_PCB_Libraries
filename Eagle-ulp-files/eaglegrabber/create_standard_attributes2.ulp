@@ -1,0 +1,123 @@
+//create_standard_attributes2.ulp
+//v0.6
+
+string ScriptPath;
+int currentSheet;
+
+if (schematic)
+{
+	schematic(S)
+	{
+		ScriptPath = filedir(S.name);
+		
+		if (sheet)
+			sheet (sh)
+			{
+				currentSheet = sh.number;
+			}
+	}
+
+	output(ScriptPath  + "AddAttributes.scr")
+	{
+		schematic(SCH) 
+		{
+			SCH.sheets(S)
+			{
+				printf("EDIT .s%d;\n",S.number);
+				printf("CHANGE DISPLAY OFF;\n");
+				S.parts(P)
+				{
+						
+					if (P.device.package)
+					{						
+
+						if(!P.attribute["DESCRIPTION"])
+						{				
+							printf("ATTRIBUTE %s DESCRIPTION 'NO DESCRIPTION';\n",P.name);
+						}
+						
+						if(!P.attribute["MANUFACTURER"])
+						{					
+							printf("ATTRIBUTE %s MANUFACTURER 'UNKNOWN MANUFACTURER';\n",P.name);
+						}						
+						
+						if(!P.attribute["MANUFACTURERPARTNUMBER"])
+						{					
+							printf("ATTRIBUTE %s MANUFACTURERPARTNUMBER 'UNKNOWN MANUFACTURER PART NUMBER';\n",P.name);
+						}
+						
+						if(!P.attribute["SOURCE"])
+						{						
+							printf("ATTRIBUTE %s SOURCE 'UNKNOWN SOURCE';\n",P.name);
+						}						
+
+						if(!P.attribute["SOURCEPARTNUMBER"])
+						{						
+							printf("ATTRIBUTE %s SOURCEPARTNUMBER 'UNKNOWN SOURCE PART NUMBER';\n",P.name);
+						}						
+
+						if(!P.attribute["ROHSCERTIFICATE"])
+						{						
+							printf("ATTRIBUTE %s ROHSCERTIFICATE 'UNKNOWN ROHS CERTIFICATE';\n",P.name);
+						}
+						
+						if((P.attribute["POPULATED"] != "TRUE") || (P.attribute["POPULATED"] != "FALSE"))
+						{						
+							printf("ATTRIBUTE %s POPULATED 'TRUE';\n",P.name);
+						}
+
+						if(!P.attribute["CLASS"])
+						{					
+							if(strrchr(P.name, 'R') == 0)
+								printf("ATTRIBUTE %s CLASS 'RESISTOR';\n",P.name);
+							
+							else if(strrchr(P.name, 'C') == 0)
+								printf("ATTRIBUTE %s CLASS 'CAPACITOR';\n",P.name);
+							
+							else if(strstr(P.name, "LED") == 0)
+								printf("ATTRIBUTE %s CLASS 'LED';\n",P.name);
+							
+							else if(strrchr(P.name, 'L') == 0)
+								printf("ATTRIBUTE %s CLASS 'INDUCTOR';\n",P.name);	
+							
+							else if(strrchr(P.name, 'Q') == 0)
+								printf("ATTRIBUTE %s CLASS 'TRANSISTOR\\MOSFET';\n",P.name);
+							
+							else if(strrchr(P.name, 'K') == 0)
+								printf("ATTRIBUTE %s CLASS 'RELAY';\n",P.name);
+							
+							else if(strrchr(P.name, 'U') == 0)
+								printf("ATTRIBUTE %s CLASS 'IC';\n",P.name);
+
+							else if(strrchr(P.name, 'D') == 0)
+								printf("ATTRIBUTE %s CLASS 'DIODE';\n",P.name);
+
+							else if(strrchr(P.name, 'J') == 0)
+								printf("ATTRIBUTE %s CLASS 'CONNECTOR\\JUMPER';\n",P.name);
+
+							else if(strrchr(P.name, 'X') == 0)
+								printf("ATTRIBUTE %s CLASS 'CONNECTOR';\n",P.name);
+								
+							else if(strrchr(P.name, 'H') == 0)
+								printf("ATTRIBUTE %s CLASS 'HOLE';\n",P.name);
+							
+							else
+								printf("ATTRIBUTE %s CLASS 'UNKNOWN CLASS';\n",P.name);
+						}
+						
+						if(!P.attribute["LINK"])
+						{					
+							printf("ATTRIBUTE %s LINK 'UNKNOWN LINK';\n",P.name);
+						}
+					}
+				}
+			}
+		}
+		
+		printf("EDIT .s%d;\n",currentSheet);
+		
+	}
+	  
+	exit("script '" +ScriptPath  + "AddAttributes.scr'");
+
+}

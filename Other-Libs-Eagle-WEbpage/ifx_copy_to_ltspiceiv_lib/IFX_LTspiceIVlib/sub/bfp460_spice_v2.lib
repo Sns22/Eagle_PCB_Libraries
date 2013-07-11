@@ -1,0 +1,90 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	6	GHZ							
+*	>>>	BFP460	<<<								
+*	(C)	2011	Infineon	Technologies	AG							
+*	Version	2.0     december 2011					
+***************************************************************
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the temperature increment caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 250 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************										
+*BFP460 C B E1 E2
+.SUBCKT BFP460 1 2 3 4
+
+CBEPAR 22 33 1.28143E-013
+CBCPAR 22 11 1.442E-013
+CCEPAR 11 33  1.57251E-013
+LB    22 20 8.19879E-010
+LE   33 30 2.70643E-010
+CBEPCK 20 30  7.159E-014
+CBCPCK 20 11  1E-015
+CCEPCK 11 30  6.715E-014
+LBx    20 2 4.08478E-010
+LEx   30 35 3.12844E-011
+LCx   11 1  3.97005E-010
+
+RE1 35 3  1E-03
+RE2 35 4  1E-03
+
+Q1 11 22 33  M_BFP460
+
+.MODEL 	M_BFP460	NPN(										
++	IS	=	1.221E-016									
++	BF	=	187.3									
++	NF	=	1.005									
++	VAF	=	37.95									
++	IKF	=	0.5364									
++	ISE	=	6.757E-014									
++	NE	=	2.312									
++	BR	=	14.19		
++	NR	=	1.004		
++	VAR	=	2.455	
++	IKR	=	0.0866		
++	ISC	=	1.335E-015		
++	NC	=	1.5		
++	RB	=	12.3172		
++	IRB	=	0		
++	RBM	=	1.73939	
++	RE	=	0.2919		
++	RC	=	2.88488	
++	XTB	=	-2.2		
++	EG	=	1.11		
++	XTI	=	0.91		
++	CJE	=	3.967E-013		
++	VJE	=	0.4605		
++	MJE	=	0.4485		
++	TF	=	4.46543E-012		
++	XTF	=	18.02		
++	VTF	=	3.248		
++	ITF	=	0.8641		
++	PTF	=	0.1		
++	CJC	=	2.777E-013		
++	VJC	=	0.6477		
++	MJC	=	0.2943		
++	XCJC	=	0.7031		
++	TR	=	2.703E-006
++	CJS	=	0		
++	MJS	=	1
++	VJS	=	1		
++	FC	=	0.5		
++	KF	=	2.9E-13			
++	AF	=	1.4)			
+***************************************************************					
+					
+
+.ENDS BFP460

@@ -1,0 +1,200 @@
+//update_from_link.ulp
+//v0.7
+
+enum {FALSE, TRUE};
+
+string ScriptPath;
+int downloadFromSource;
+
+string message;
+string args;
+
+int currentSheet;
+
+int FileExists( string name )
+{
+	string files[];
+	return (fileglob(files, name) != 0);
+}
+
+string getInfo(string tag, string startDelimeter, string endDelimeter, string response)
+{
+	int labelIndex = strstr(response, tag);
+	
+	int beginningIndex = strstr(response, startDelimeter, labelIndex) + strlen(startDelimeter);
+	
+	int length = strstr(response, endDelimeter, beginningIndex) - beginningIndex;
+	
+	string info = strsub(response, beginningIndex, length);
+	
+	return info;
+	
+}
+
+//Need to convert '/' in eagle path to '\' for windows
+string ConvertPathForWindows(string s)
+{
+	string s_out = s;
+	int index;
+	
+	while (strchr(s_out, '/') != -1)
+	{
+		index = strchr(s_out, '/');
+		s_out[index] = '\\';
+	}
+	
+	return s_out;
+}
+
+//Remove these characters \ / : * ? " < > | 
+string RemoveBadCharacters(string s)
+{
+	string s_out = "";
+	
+	for (int i = 0; s[i]; ++i)
+	{
+		if((s[i] != '/') &&
+			(s[i] != '\\') &&
+			(s[i] != ':') &&
+			(s[i] != '*') &&
+			(s[i] != '?') &&
+			(s[i] != '\"') &&
+			(s[i] != '(') &&
+			(s[i] != ')') &&
+			(s[i] != ';') &&
+			(s[i] != '<') &&
+			(s[i] != '>') &&
+			(s[i] != '|') &&
+			(s[i] != '&'))
+		{
+			s_out[strlen(s_out)] = s[i];
+		}
+	}
+	return s_out;
+}
+
+//Double up these characters before writing them % \
+string DoubleUpCharacters(string s)
+{
+	string s_out = "";
+	
+	for (int i = 0; s[i]; ++i)
+	{
+		if((s[i] == '%') ||
+			(s[i] == '\\'))
+		{
+			s_out[strlen(s_out)] = s[i];
+			s_out[strlen(s_out)] = s[i];
+		}
+		else
+			s_out[strlen(s_out)] = s[i];
+	}
+	return s_out;
+}
+
+//Check if we're on the schematic sheet
+if (schematic)
+{
+	//Get directory for the schematic we're working with
+	schematic(S)
+	{
+		ScriptPath = filedir(S.name);
+		
+		if (sheet)
+			sheet (sh)
+			{
+				currentSheet = sh.number;
+			}
+	}
+
+	output(ScriptPath  + "AddAttributes.scr")
+	{
+		schematic(SCH) 
+		{
+			SCH.sheets(S)
+			{
+				printf("EDIT .s%d;\n",S.number);
+				printf("CHANGE DISPLAY OFF;\n");
+				S.parts(P)
+				{
+						
+					if (P.device.package)
+					{	
+
+						downloadFromSource = FALSE;
+						
+						//Make sure the LINK field is filled out
+						if(P.attribute["LINK"] != "UNKNOWN LINK")
+						{
+						
+							//sprintf(message,"Got in here %s", P.attribute["LINK"]);
+							//dlgMessageBox(message, "&Ok");
+							
+							//Check if any of the attributes have not been filled out
+							if((P.attribute["DESCRIPTION"] == "NO DESCRIPTION") ||
+								(P.attribute["MANUFACTURER"] == "UNKNOWN MANUFACTURER") ||
+								(P.attribute["MANUFACTURERPARTNUMBER"] == "UNKNOWN MANUFACTURER PART NUMBER") ||
+								(P.attribute["SOURCEPARTNUMBER"] == "UNKNOWN SOURCE PART NUMBER") ||
+								(P.attribute["ROHSCERTIFICATE"] == "UNKNOWN ROHS CERTIFICATE"))
+							{
+								
+								//Right now EagleGrabber.exe works for DigiKey and Mouser
+								if(strstr(P.attribute["LINK"], "digikey") != -1)
+								{
+							
+									string modifiedLink = RemoveBadCharacters(P.attribute["LINK"]);
+									
+									string webpage;
+									
+									if (FileExists(ScriptPath + modifiedLink) == 0)
+									{
+										netget(webpage, P.attribute["LINK"]);
+										
+										output(modifiedLink, "wt")
+										{
+											printf(DoubleUpCharacters(webpage));
+										}
+										
+									}
+									else
+									{
+										fileread(webpage, ScriptPath + modifiedLink); 
+										
+									}
+									
+									string dkPartNumber = getInfo("<th align=right>Digi-Key Part Number", "content=\"sku:", "\"", webpage);
+
+									string manufacturerPartNumber = getInfo("<th align=right>Manufacturer Part Number", "content=\"", "\"", webpage);
+					
+									string description = getInfo("<th align=right>Description", "<td itemprop=\"description\">", "</td>", webpage);
+					
+									string rohsStatus = getInfo("<th align=right>Lead Free Status / RoHS Status", "<td>", "</td>", webpage);
+									
+									string manufacturer = getInfo("<th align=right>Manufacturer", "<span itemprop=\"name\">", "</span>", webpage);
+									
+								
+									//Update the attributes
+									printf("ATTRIBUTE %s DESCRIPTION '" + description + "';\n",P.name);
+									printf("ATTRIBUTE %s MANUFACTURER '" + manufacturer + "';\n",P.name);
+									printf("ATTRIBUTE %s MANUFACTURERPARTNUMBER '" + manufacturerPartNumber + "';\n",P.name);
+									printf("ATTRIBUTE %s ROHSCERTIFICATE '" + rohsStatus + "';\n",P.name);
+									printf("ATTRIBUTE %s SOURCEPARTNUMBER '" + dkPartNumber + "';\n",P.name);
+									
+									if(strstr(P.attribute["LINK"], "digikey") != -1)
+										printf("ATTRIBUTE %s SOURCE 'DIGIKEY';\n",P.name);
+								
+								}
+							}							
+						}						
+					}
+				}
+			}
+		}
+		
+		printf("EDIT .s%d;\n",currentSheet);
+		
+	}
+	  
+	exit("script '" +ScriptPath  + "AddAttributes.scr'");
+
+}

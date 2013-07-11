@@ -1,0 +1,86 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	6	GHZ							
+*	>>>	BFR106	<<<								
+*	(C)	2012	Infineon	Technologies	AG							
+*	Version 2.0	January	2012								
+***************************************************************				
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the temperature increment caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 110 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   0°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************
+*BFR106 C B E
+.SUBCKT BFR106 1 2 3
+
+CBEPAR N022 N033 2.22E-012
+CBCPAR N022 N011 4.288E-013
+CCEPAR N011 N033 2.621E-015
+LB    N022 N020 6.736E-010
+LE   N033 N030 6.937E-010
+CBEPCK N020 N030  1.567E-014
+CBCPCK N011 N020  1.975E-013
+CCEPCK N011 N030  1.497E-013
+LBX    N020 2 7.342E-010
+LEX   N030 3 6.492E-010
+LCX   N011 1  6.908E-010
+
+Q1 N011 N022 N033  M_BFR106
+
+.MODEL 	M_BFR106	NPN(										
++	IS	=	1.779E-015									
++	BF	=	113.8									
++	NF	=	1									
++	VAF	=	27.87									
++	IKF	=	1.181									
++	ISE	=	1.644E-014									
++	NE	=	2									
++	BR	=	22		
++	NR	=	0.9964		
++	VAR	=	3.898	
++	IKR	=	0.1065		
++	ISC	=	8.839E-014		
++	NC	=	1.567		
++	RB	=	4.5		
++	IRB	=	0		
++	RBM	=	2.5	
++	RE	=	0.07303		
++	RC	=	5.1	
++	XTB	=	1.303		
++	EG	=	1.12		
++	XTI	=	6.548		
++	CJE	=	4.149E-012		
++	VJE	=	0.8551		
++	MJE	=	0.4611		
++	TF	=	2.345E-011		
++	XTF	=	10.29		
++	VTF	=	7.452		
++	ITF	=	0.5446		
++	PTF	=	0.08058		
++	CJC	=	9.627E-013		
++	VJC	=	0.5893		
++	MJC	=	0.4818		
++	XCJC	=	0.5631		
++	TR	=	1.434E-010
++	CJS	=	0
++	VJS	=	1	
++	MJS	=	1	
++	FC	=	0.5		
++	KF	=	8.22E-015		
++	AF	=	1.51)			
+***************************************************************					
+
+.ENDS BFR106

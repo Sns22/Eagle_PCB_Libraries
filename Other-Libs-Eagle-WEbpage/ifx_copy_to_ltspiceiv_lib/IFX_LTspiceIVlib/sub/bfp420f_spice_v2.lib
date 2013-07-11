@@ -1,0 +1,99 @@
+***************************************************************												
+*	Infineon	Technologies	AG									
+*	GUMMEL-POON	MODEL	IN	SPICE	2G6	SYNTAX				
+*	VALID	UP	TO	10	GHZ							
+*	>>>	BFP420F	<<<								
+*	(C)	2011	Infineon	Technologies	AG							
+*	Version 2.0	August	2011								
+***************************************************************		
+* - Please use the global SPICE parameter TEMP to set the junction
+*   temperature of this device in your circuit to get correct DC 
+*   simulation results. 
+* - TEMP is calculated by TEMP=TA+P*(RthJS+RthSA). The junction 
+*   temperature TEMP is the sum of the ambient temperature TA and 
+*   the increment of temperature caused by the dissipated power 
+*   P=VCE*IC (IC collector current, VCE collector-emitter voltage). 
+* - RthJS is the thermal resistance between the junction and the 
+*   soldering point. RthJS for this device is 240 K/W. RthSA is the 
+*   thermal resistance of the PCB, from the soldering point to the 
+*   ambient. For determination of RthSA please refer to Infineon's 
+*   Application Note "Thermal Resistance Calculation" AN077.
+* - The model has been verified in the junction temperature range
+*   -25°C to +125°C.
+* - TNOM=25 °C is the nominal ambient temperature.
+*   Please do not change this value.
+****************************************************************			
+*BFP420F C B E1 E2 
+.SUBCKT BFP420F 1 2 3 4
+
+CBEPAR 22 33 6.84421E-014
+CBCPAR 22 11 1.04791E-013
+CCEPAR 11 33 1.08422E-014
+LB    22 20 5.76616E-010
+LE   33 30 2.74191E-010
+LC   11 10  5.5524E-010
+CBEPCK 20 30  4.64908E-014
+CBCPCK 20 10  1.764E-015
+CCEPCK 10 30  3.98512E-014
+LBX    20 2 8.07664E-011
+LEX   30 35 4.936E-011
+LCX   10 1  7.26419E-011
+
+RS 55 30 13.05
+RE1 35 3 1E-03
+RE2 35 4 1E-03
+
+Diode_sub 55 11 M_Diode_sub
+
+Q1 11 22 33 55 M_BFP420F
+
+.MODEL M_Diode_sub D(
++	IS	=	4.356E-015				
++	N	=	1.02			
++	RS	=	0.1			
++	CJO	=	4E-014)			
+
+.MODEL 	M_BFP420F  	NPN(										
++	IS	=	3.753E-017									
++	BF	=	127.8									
++	NF	=	0.9969									
++	VAF	=	59.18									
++	IKF	=	0.6604									
++	ISE	=	2.064E-013									
++	NE	=	2.593									
++	BR	=	13.61		
++	NR	=	1.009		
++	VAR	=	2.685	
++	IKR	=	0.007013		
++	ISC	=	3.49E-016		
++	NC	=	1.5		
++	RB	=	7.236		
++	IRB	=	0		
++	RBM	=	1.521	
++	RE	=	0.3062		
++	RC	=	2.152	
++	XTB	=	0.1187		
++	EG	=	1.11		
++	XTI	=	4.162		
++	CJE	=	5.62122E-013		
++	VJE	=	0.489194		
++	MJE	=	0.2565		
++	TF	=	4.49302E-012		
++	XTF	=	6.24451		
++	VTF	=	10.658		
++	ITF	=	0.543638		
++	PTF	=	0		
++	CJC	=	1.2273E-013		
++	VJC	=	0.8453		
++	MJC	=	0.6803		
++	XCJC	=	0.7		
++	TR	=	4.7E-009
++	CJS	=	4.75722E-013		
++	MJS	=	1			
++	VJS	=	0.532348 		
++	FC	=	0.4148		
++	KF	=	4.677E-011		
++	AF	=	1.966)			
+***************************************************************					
+				
+.ENDS BFP420F

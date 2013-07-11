@@ -1,0 +1,31 @@
+Thank you for your interest in PCB-GCODE-WIZARD.
+
+This zip file contains a few screenshots and the Help file for version 101, to give you an idea of how it works. For more information, please go to:
+
+WWW.PCBGCODE.COM
+
+There you will find more detailed information, as well as a series of SCREENSHOTS and VIDEO TUTORIALS.
+
+
+
+What does PCB-GCODE-WIZARD do?
+
+It is for people who want to mill their own PCBs using a CNC machine.
+
+It is a 3-step process:
+(Step 1) Design the PCB schematic and layout using Eagle.
+(Step 2) Run the PCBGCODE.ULP from John Johnson to generate the raw CNC gcode file.
+	 See www.pcbgcode.org to download version 3.5.2.11.
+(Step 3) Read the raw gcode file into PCB-GCODE-WIZARD to view and verify it, and generate an optimized gcode file.
+
+There are two types of optimization featured:
+(1) Elimination of redundant milling paths to greatly reduce total milling times.
+(2) G00 Rapid travel optimization for minimum distance.
+
+#2 above can also be used to minimize G00 Rapid travel during drilling operations, although some manual editing of the raw gcode file is necessary to split milling and drilling info.
+
+
+PCB-GCODE-WIZARD can be purchased using Paypal, see website for details.
+Current version is v101, please ignore obsolete demo version 100 which was previously posted on Cadsoft downloads page.
+
+
